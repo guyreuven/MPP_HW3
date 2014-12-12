@@ -1,10 +1,10 @@
 class SerialFirewall {
-  public static long main(String[] args) {
+  public static long runSerialFirewall(String[] args) {
     final int numMilliseconds = Integer.parseInt(args[0]);   
     final int numSources = Integer.parseInt(args[1]);
     final long mean = Long.parseLong(args[2]);
     final boolean uniformFlag = Boolean.parseBoolean(args[3]);
-    final short experimentNumber = Short.parseShort(args[4]);
+    final short experimentNumber = Short.parseShort(args[5]);
     
     StopWatch timer = new StopWatch();
     PacketSource pkt = new PacketSource(mean, numSources, experimentNumber);
@@ -39,7 +39,7 @@ class SerialFirewall {
 }
 
 class SerialQueueFirewall {
-  public static long main(String[] args) {
+  public static long runSerialQueueFirewall(String[] args) {
     final int numMilliseconds = Integer.parseInt(args[0]);   
     final int numSources = Integer.parseInt(args[1]);
     final long mean = Long.parseLong(args[2]);
@@ -103,7 +103,7 @@ class SerialQueueFirewall {
 }
 
 class ParallelFirewall {
-  public static long main(String[] args) {
+  public static long runParallelFirewall(String[] args) {
     final int numMilliseconds = Integer.parseInt(args[0]);     
     final int numSources = Integer.parseInt(args[1]);
     final long mean = Long.parseLong(args[2]);

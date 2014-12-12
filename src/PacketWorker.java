@@ -154,30 +154,30 @@ class Dispatcher implements Runnable {
 			}
 		}
 		
-		//calculate the maximum packet number from packet counter.
-		maxPacketNum = 0;
-		for(int pktNum:this.pktCounter)
-		{
-			if(pktNum > maxPacketNum)
-			{
-				maxPacketNum = pktNum;
-			}
-		}
-		
-		//send all remain packet
-		for( int i = 0; i < numSources; i++ ) {
-			while(this.pktCounter[i] < maxPacketNum)
-			{
-				if( uniformBool )
-					tmp = pkt.getUniformPacket(i);
-				else
-					tmp = pkt.getExponentialPacket(i);
-				try {
-					//enqueue tmp in the ith Lamport queue
-					this.lamportQueueBank[i].enq(tmp);
-					this.pktCounter[i]++;
-				} catch (FullException e) {;}
-			}
-		}
+//		//calculate the maximum packet number from packet counter.
+//		maxPacketNum = 0;
+//		for(int pktNum:this.pktCounter)
+//		{
+//			if(pktNum > maxPacketNum)
+//			{
+//				maxPacketNum = pktNum;
+//			}
+//		}
+//		
+//		//send all remain packet
+//		for( int i = 0; i < numSources; i++ ) {
+//			while(this.pktCounter[i] < maxPacketNum)
+//			{
+//				if( uniformBool )
+//					tmp = pkt.getUniformPacket(i);
+//				else
+//					tmp = pkt.getExponentialPacket(i);
+//				try {
+//					//enqueue tmp in the ith Lamport queue
+//					this.lamportQueueBank[i].enq(tmp);
+//					this.pktCounter[i]++;
+//				} catch (FullException e) {;}
+//			}
+//		}
 	}
 }  
