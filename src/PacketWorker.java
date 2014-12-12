@@ -70,6 +70,7 @@ class SerialQueuePacketWorker implements PacketWorker {
 				try {
 					//enqueue tmp in the ith Lamport queue
 					this.queueBank[i].enq(tmp);
+					
 				} catch (FullException e) {;}
 				try {
 					//dequeue the next packet from the ith Lamport queue into tmp

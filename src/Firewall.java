@@ -1,5 +1,5 @@
 class SerialFirewall {
-  public static void main(String[] args) {
+  public static long main(String[] args) {
     final int numMilliseconds = Integer.parseInt(args[0]);   
     final int numSources = Integer.parseInt(args[1]);
     final long mean = Long.parseLong(args[2]);
@@ -26,14 +26,20 @@ class SerialFirewall {
     } catch (InterruptedException ignore) {;}      
     timer.stopTimer();
     final long totalCount = workerData.totalPackets;
-    System.out.println("count: " + totalCount);
-    System.out.println("time: " + timer.getElapsedTime());
-    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+//    System.out.println("count: " + totalCount);
+//    System.out.println("time: " + timer.getElapsedTime());
+//    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+//    
+    printHelper.prettyPrint("Count", totalCount);
+    printHelper.prettyPrint("Time", timer.getElapsedTime());
+    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " pkts / ms");
+    
+    return totalCount/timer.getElapsedTime();
   }
 }
 
 class SerialQueueFirewall {
-  public static void main(String[] args) {
+  public static long main(String[] args) {
     final int numMilliseconds = Integer.parseInt(args[0]);   
     final int numSources = Integer.parseInt(args[1]);
     final long mean = Long.parseLong(args[2]);
@@ -50,15 +56,22 @@ class SerialQueueFirewall {
     // allocate and initialize bank of numSources Lamport queues
     // each with depth queueDepth
     // they should throw FullException and EmptyException upon those conditions
-    LamportsQueue<Packet>[] lamportQbank = new LamportsQueue[numSources];
-    for(LamportsQueue<Packet> lQ : lamportQbank)
-    {
-    	lQ = new LamportsQueue<Packet>(queueDepth);
+    
+	LamportsQueue<Packet>[] lamportQbank = new LamportsQueue[numSources];
+    for (int i = 0; i < numSources ; i++ )	{
+    	lamportQbank[i] = new LamportsQueue<Packet>(queueDepth);
     }
-
+	
+//	for(LamportsQueue<Packet> lQ : lamportQbank)
+//    {
+//    	LamportsQueue<Packet> tmp = new LamportsQueue<Packet>(queueDepth);
+////    	lQ = new LamportsQueue<Packet>(queueDepth);
+//    	lQ = tmp;
+//    }
+    
     // Create a SerialQueuePackerWorker workerData 
     // as SerialPackerWorker, but be sure to Pass the lamport queues
-    SerialQueuePacketWorker workerData = new SerialQueuePacketWorker(done, pkt, uniformFlag, queueDepth, lamportQbank); 
+    SerialQueuePacketWorker workerData = new SerialQueuePacketWorker(done, pkt, uniformFlag, numSources, lamportQbank); 
     
     // The rest of the code looks as in Serial Firewall
     Thread workerThread = new Thread(workerData);
@@ -75,15 +88,22 @@ class SerialQueueFirewall {
     } catch (InterruptedException ignore) {;}      
     timer.stopTimer();
     final long totalCount = workerData.totalPackets;
-    System.out.println("count: " + totalCount);
-    System.out.println("time: " + timer.getElapsedTime());
-    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+    
+//    System.out.println("count: " + totalCount);
+//    System.out.println("time: " + timer.getElapsedTime());
+//    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+    
+    printHelper.prettyPrint("Count", totalCount);
+    printHelper.prettyPrint("Time", timer.getElapsedTime());
+    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " pkts / ms");
+    
+    return totalCount/timer.getElapsedTime();
     
   }
 }
 
 class ParallelFirewall {
-  public static void main(String[] args) {
+  public static long main(String[] args) {
     final int numMilliseconds = Integer.parseInt(args[0]);     
     final int numSources = Integer.parseInt(args[1]);
     final long mean = Long.parseLong(args[2]);
@@ -97,30 +117,45 @@ class ParallelFirewall {
    
     // Allocate and initialize bank of Lamport queues, as in SerialQueueFirewall
     LamportsQueue<Packet>[] lamportQbank = new LamportsQueue[numSources];
-    for(LamportsQueue<Packet> lQ : lamportQbank)
-    {
-    	lQ = new LamportsQueue<Packet>(queueDepth);
+//    for(LamportsQueue<Packet> lQ : lamportQbank)
+//    {
+//    	lQ = new LamportsQueue<Packet>(queueDepth);
+//    }
+    
+    for (int i = 0; i < numSources ; i++ )	{
+    	lamportQbank[i] = new LamportsQueue<Packet>(queueDepth);
     }
-
+    
     // Allocate and initialize any signals used to marshal threads (eg. done signals)
-    PaddedPrimitiveNonVolatile<Boolean>[] doneArr = new PaddedPrimitiveNonVolatile[numSources+2];
-    for(PaddedPrimitiveNonVolatile<Boolean> doneSignal:doneArr)
-    {
-    	doneSignal = new PaddedPrimitiveNonVolatile<Boolean>(false);
+    PaddedPrimitiveNonVolatile<Boolean>[] doneArr = new PaddedPrimitiveNonVolatile[numSources+1];
+    for (int i = 0; i < numSources ; i++ )	{
+    	lamportQbank[i] = new LamportsQueue<Packet>(queueDepth);
+    	doneArr[i] = new PaddedPrimitiveNonVolatile<Boolean>(false);
     }
+    
+    doneArr[numSources] = new PaddedPrimitiveNonVolatile<Boolean>(false); // the dispatcher doesn't need a queue
+    
+//    for(PaddedPrimitiveNonVolatile<Boolean> doneSignal:doneArr)
+//    {
+//    	doneSignal = new PaddedPrimitiveNonVolatile<Boolean>(false);
+//    }
 
     // Allocate and initialize a Dispatcher class implementing Runnable
     // and a corresponding Dispatcher Thread
-    Dispatcher dispatcher = new Dispatcher(doneArr[0], lamportQbank, numSources, uniformFlag, pkt); 
+    Dispatcher dispatcher = new Dispatcher(doneArr[numSources], lamportQbank, numSources, uniformFlag, pkt); 
     Thread dispatcherThread = new Thread(dispatcher);
     
-    // Allocate and initialize an array of Worker classes (ParallelPacketWorker), 
+    // Allocate and initialize an array of Worker classes (ParallelPacketWorker),
+    ParallelPacketWorker[] parallelPacketWorkers = new ParallelPacketWorker[numSources];
+    
     // implementing Runnable and the corresponding Worker Threads
     Thread[] parallelPacketWorkerThreads = new Thread[numSources];
-    for(int i=1; i < (numSources+1); i++)
+    for(int i=0; i < numSources; i++)
     {
-    	ParallelPacketWorker parallelPacketWorker = new ParallelPacketWorker(doneArr[i], lamportQbank[i-1]);
-        parallelPacketWorkerThreads[i-1] = new Thread(parallelPacketWorker);
+    	ParallelPacketWorker parallelPacketWorker = new ParallelPacketWorker(doneArr[i], lamportQbank[i]);
+    	parallelPacketWorkers[i] = parallelPacketWorker;
+    	parallelPacketWorkerThreads[i] = new Thread(parallelPacketWorker);
+        
     }
 
     
@@ -140,7 +175,7 @@ class ParallelFirewall {
     
     // assert signals to stop Dispatcher - remember, Dispatcher needs to deliver an
     // equal number of packets from each source
-    doneArr[0].value = true;
+    doneArr[numSources].value = true;
     // call .join() on Dispatcher
     try {
 		dispatcherThread.join();
@@ -152,7 +187,7 @@ class ParallelFirewall {
     // empty - use whatever protocol you like, but one easy one is to have each
     // worker verify that it's corresponding queue is empty after it observes the
     // done signal set to true
-    for(int i=1; i < (numSources+1); i++)
+    for(int i = 0; i < numSources; i++)
     {
     	doneArr[i].value = true;
     }
@@ -169,6 +204,21 @@ class ParallelFirewall {
 		}
     }
     timer.stopTimer();
+    
+    // Get the total number of enq packets
+    long totalPackets = 0;
+    for (ParallelPacketWorker parallelPacketWorker : parallelPacketWorkers) {
+        totalPackets += parallelPacketWorker.numOfPackets;
+    }
+    
     // Output the statistics
+//    System.out.println("count: " + totalPackets);
+//    System.out.println("time: " + timer.getElapsedTime());
+    printHelper.prettyPrint("Count", totalPackets);
+    printHelper.prettyPrint("Time", timer.getElapsedTime());
+    printHelper.prettyPrint("Total packets/ms", totalPackets/timer.getElapsedTime(), " pkts / ms");
+    long retVal = totalPackets / timer.getElapsedTime();
+//    System.out.println(retVal + " pkts / ms");
+    return retVal;
   }
 }
