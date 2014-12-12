@@ -29,9 +29,6 @@ public class MppRunner {
         printHelper.csvPrinter("Serial", numSourcesArgs, serialFirewallResults);
         printHelper.csvPrinter("SerialQueue", numSourcesArgs, serialQueueFirewallResults);
         
-//        excel_print("Serial", numSourcesArgs, serialFirewallResults);
-//        excel_print("SerialQueue", numSourcesArgs, serialQueueFirewallResults);
-
         
         System.out.println("Running Dispatcher Rate test");
         System.out.println("===============================\n");
@@ -51,7 +48,6 @@ public class MppRunner {
             }
         }
 
-//        excel_print("Parallel", numSourcesArgs2, parallel_res2);
         printHelper.csvPrinter("Parallel", numSourcesArgs2, ParallelFirewallResults);
         
         
@@ -74,8 +70,6 @@ public class MppRunner {
                 i++;
             }
         }
-//        excel_print("Serial", numSourcesArgs3, serialFirewallResults3);
-//        excel_print("Parallel", numSourcesArgs3, ParallelFirewallResults3);
         printHelper.csvPrinter("Serial", numSourcesArgs3, serialFirewallResults3);
         printHelper.csvPrinter("Parallel", numSourcesArgs3, ParallelFirewallResults3);
 
@@ -102,26 +96,10 @@ public class MppRunner {
                 i++;
             }
         }
-//        excel_print("Serial", numSourcesArgs4, serialFirewallResults4);
-//        excel_print("Parallel", numSourcesArgs4, ParallelFirewallResults4);
         
         printHelper.csvPrinter("Serial", numSourcesArgs4, serialFirewallResults4);
         printHelper.csvPrinter("Parallel", numSourcesArgs4, ParallelFirewallResults4);
 
     }
 
-//    private static void excel_print(String name, String[] Ns, long[][] serial_queue_results) {
-//        System.out.println("Name: " + name);
-//        StringBuilder sb = new StringBuilder();
-//        int i = 0;
-//        for (long[] serial_queue_result : serial_queue_results) {
-//            sb.append(Ns[i] + ",");
-//            for (long l : serial_queue_result) {
-//                sb.append(l + ",");
-//            }
-//            System.out.println(sb.toString());
-//            sb.setLength(0);
-//            i++;
-//        }
-//    }
 }
