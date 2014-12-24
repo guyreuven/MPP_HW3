@@ -105,7 +105,6 @@ class LockAllocator {
     else {
       System.out.println("This is not a valid lockType:");
       System.out.println(lockType);
-      lock = new ReentrantWrapperLock();
     }
     return lock;
   }
