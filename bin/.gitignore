@@ -11,3 +11,13 @@
 /SoloCounterWorker.class
 /Statistics.class
 /TASLock.class
+/CLHLock.class
+/MCSLock.class
+/CLHLock$Node.class
+/CLHLock$1.class
+/CLHLock$2.class
+/MCSLock$1.class
+/MCSLock$QNode.class
+/MCSLock$Node.class
+/CLHLock$QNode.class
+/QNode.class
