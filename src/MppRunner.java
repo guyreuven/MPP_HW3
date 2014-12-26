@@ -30,8 +30,8 @@ public class MppRunner {
 	        for (int r = 0; r < runs; r++) {
 	            int i = 0;
 	            for (String lock : lockInputsArgs) {
-	            	String[] arguments = new String[]{M, "1", lock};
-	            	parallelCounterResults[i] += ParallelCounter.main(arguments)/runs; 
+	            	String[] arguments = new String[]{M, "1", lock, "1"};
+	            	parallelCounterResults[i] += Long.valueOf(ParallelCounter.main(arguments))/runs; 
 	                i++;
 	            }
 	        }
@@ -39,10 +39,39 @@ public class MppRunner {
 	     
 		case COUNTER_LockScaling:	
 			// Optimize the DELAY params
+			
+			System.out.println("Running Backoff Lock optimization test");
+	        System.out.println("======================================\n");
 			String[] arguments = new String[]{M, "32", "1"};
 			long optimizedMinResult = ParallelCounterBackOffLockBenckmark.main(arguments);
 			System.out.println(optimizedMinResult);
+	     
+		case COUNTER_Fairness:
+			
+			System.out.println("Running Fairness test");
+	        System.out.println("======================\n");
 	        
+	        numSourcesArgs = new String[]{"32"};				// num of threads
+	        lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock 
+			
+			
+	        
+	        
+	        
+			
+		case PACKET_IdleLockOverhead:
+			
+			break;
+			
+		case PACKET_SpeedupWithUniformLoad:
+			
+			break;
+
+		case PACKET_SpeedupWithExponentialLoad:
+			
+			break;
+		
+			
         }
 	}
 }
