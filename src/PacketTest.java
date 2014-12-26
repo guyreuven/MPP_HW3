@@ -63,7 +63,6 @@ class ParallelPacket {
     // 
     PaddedPrimitiveNonVolatile<Boolean>[] doneArr = new PaddedPrimitiveNonVolatile[numSources+1];
     for (int i = 0; i < numSources ; i++ )	{
-    	lamportQbank[i] = new LamportsQueue<Packet>(queueDepth);
     	doneArr[i] = new PaddedPrimitiveNonVolatile<Boolean>(false);
     }
     

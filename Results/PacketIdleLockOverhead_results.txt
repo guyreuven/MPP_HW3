@@ -1,0 +1,624 @@
+Running PACKET_IdleLockOverhead test
+===============================
+
+Lock: 0  S: 0  W: 25
+TASLock
+count: 2499521
+time: 2001
+1249 pkts / ms
+Lock: 0  S: 0  W: 200
+TASLock
+count: 2530864
+time: 2001
+1264 pkts / ms
+Lock: 0  S: 0  W: 800
+TASLock
+count: 965520
+time: 2000
+482 pkts / ms
+Lock: 0  S: 1  W: 25
+TASLock
+count: 2349302
+time: 2004
+1172 pkts / ms
+Lock: 0  S: 1  W: 200
+TASLock
+count: 1921846
+time: 2001
+960 pkts / ms
+Lock: 0  S: 1  W: 800
+TASLock
+count: 932694
+time: 2001
+466 pkts / ms
+Lock: 1  S: 0  W: 25
+BackoffLock
+count: 3153067
+time: 2000
+1576 pkts / ms
+Lock: 1  S: 0  W: 200
+BackoffLock
+count: 3001876
+time: 2001
+1500 pkts / ms
+Lock: 1  S: 0  W: 800
+BackoffLock
+count: 927544
+time: 2001
+463 pkts / ms
+Lock: 1  S: 1  W: 25
+BackoffLock
+count: 3275431
+time: 2000
+1637 pkts / ms
+Lock: 1  S: 1  W: 200
+BackoffLock
+count: 2100214
+time: 2000
+1050 pkts / ms
+Lock: 1  S: 1  W: 800
+BackoffLock
+count: 884141
+time: 2001
+441 pkts / ms
+Lock: 4  S: 0  W: 25
+CLHLock
+count: 2854856
+time: 2001
+1426 pkts / ms
+Lock: 4  S: 0  W: 200
+CLHLock
+count: 2890222
+time: 2001
+1444 pkts / ms
+Lock: 4  S: 0  W: 800
+CLHLock
+count: 1014066
+time: 2000
+507 pkts / ms
+Lock: 4  S: 1  W: 25
+CLHLock
+count: 2528265
+time: 2000
+1264 pkts / ms
+Lock: 4  S: 1  W: 200
+CLHLock
+count: 1174978
+time: 2000
+587 pkts / ms
+Lock: 4  S: 1  W: 800
+CLHLock
+count: 795435
+time: 2000
+397 pkts / ms
+Lock: 5  S: 0  W: 25
+MCSLock
+count: 3315631
+time: 2001
+1656 pkts / ms
+Lock: 5  S: 0  W: 200
+MCSLock
+count: 2825885
+time: 2001
+1412 pkts / ms
+Lock: 5  S: 0  W: 800
+MCSLock
+count: 999070
+time: 2001
+499 pkts / ms
+Lock: 5  S: 1  W: 25
+MCSLock
+count: 2209363
+time: 2001
+1104 pkts / ms
+Lock: 5  S: 1  W: 200
+MCSLock
+count: 1766449
+time: 2000
+883 pkts / ms
+Lock: 5  S: 1  W: 800
+MCSLock
+count: 795069
+time: 2000
+397 pkts / ms
+Lock: 0  S: 0  W: 25
+TASLock
+count: 2890915
+time: 2000
+1445 pkts / ms
+Lock: 0  S: 0  W: 200
+TASLock
+count: 2868140
+time: 2000
+1434 pkts / ms
+Lock: 0  S: 0  W: 800
+TASLock
+count: 1006480
+time: 2000
+503 pkts / ms
+Lock: 0  S: 1  W: 25
+TASLock
+count: 2295480
+time: 2000
+1147 pkts / ms
+Lock: 0  S: 1  W: 200
+TASLock
+count: 1929895
+time: 2000
+964 pkts / ms
+Lock: 0  S: 1  W: 800
+TASLock
+count: 879922
+time: 2001
+439 pkts / ms
+Lock: 1  S: 0  W: 25
+BackoffLock
+count: 2479500
+time: 2001
+1239 pkts / ms
+Lock: 1  S: 0  W: 200
+BackoffLock
+count: 3019776
+time: 2001
+1509 pkts / ms
+Lock: 1  S: 0  W: 800
+BackoffLock
+count: 981262
+time: 2000
+490 pkts / ms
+Lock: 1  S: 1  W: 25
+BackoffLock
+count: 1751968
+time: 2000
+875 pkts / ms
+Lock: 1  S: 1  W: 200
+BackoffLock
+count: 2233029
+time: 2000
+1116 pkts / ms
+Lock: 1  S: 1  W: 800
+BackoffLock
+count: 852861
+time: 2000
+426 pkts / ms
+Lock: 4  S: 0  W: 25
+CLHLock
+count: 1624927
+time: 2001
+812 pkts / ms
+Lock: 4  S: 0  W: 200
+CLHLock
+count: 3040055
+time: 2001
+1519 pkts / ms
+Lock: 4  S: 0  W: 800
+CLHLock
+count: 973098
+time: 2001
+486 pkts / ms
+Lock: 4  S: 1  W: 25
+CLHLock
+count: 2055147
+time: 2001
+1027 pkts / ms
+Lock: 4  S: 1  W: 200
+CLHLock
+count: 1507279
+time: 2001
+753 pkts / ms
+Lock: 4  S: 1  W: 800
+CLHLock
+count: 742453
+time: 2000
+371 pkts / ms
+Lock: 5  S: 0  W: 25
+MCSLock
+count: 2926849
+time: 2001
+1462 pkts / ms
+Lock: 5  S: 0  W: 200
+MCSLock
+count: 2268299
+time: 2001
+1133 pkts / ms
+Lock: 5  S: 0  W: 800
+MCSLock
+count: 967331
+time: 2001
+483 pkts / ms
+Lock: 5  S: 1  W: 25
+MCSLock
+count: 2319698
+time: 2001
+1159 pkts / ms
+Lock: 5  S: 1  W: 200
+MCSLock
+count: 1478514
+time: 2001
+738 pkts / ms
+Lock: 5  S: 1  W: 800
+MCSLock
+count: 722403
+time: 2001
+361 pkts / ms
+Lock: 0  S: 0  W: 25
+TASLock
+count: 2264437
+time: 2001
+1131 pkts / ms
+Lock: 0  S: 0  W: 200
+TASLock
+count: 2563145
+time: 2000
+1281 pkts / ms
+Lock: 0  S: 0  W: 800
+TASLock
+count: 978262
+time: 2000
+489 pkts / ms
+Lock: 0  S: 1  W: 25
+TASLock
+count: 2328786
+time: 2001
+1163 pkts / ms
+Lock: 0  S: 1  W: 200
+TASLock
+count: 2235998
+time: 2001
+1117 pkts / ms
+Lock: 0  S: 1  W: 800
+TASLock
+count: 934139
+time: 2001
+466 pkts / ms
+Lock: 1  S: 0  W: 25
+BackoffLock
+count: 2942228
+time: 2000
+1471 pkts / ms
+Lock: 1  S: 0  W: 200
+BackoffLock
+count: 2930308
+time: 2000
+1465 pkts / ms
+Lock: 1  S: 0  W: 800
+BackoffLock
+count: 994077
+time: 2001
+496 pkts / ms
+Lock: 1  S: 1  W: 25
+BackoffLock
+count: 1860419
+time: 2000
+930 pkts / ms
+Lock: 1  S: 1  W: 200
+BackoffLock
+count: 2345640
+time: 2000
+1172 pkts / ms
+Lock: 1  S: 1  W: 800
+BackoffLock
+count: 938944
+time: 2001
+469 pkts / ms
+Lock: 4  S: 0  W: 25
+CLHLock
+count: 2682926
+time: 2001
+1340 pkts / ms
+Lock: 4  S: 0  W: 200
+CLHLock
+count: 2686207
+time: 2001
+1342 pkts / ms
+Lock: 4  S: 0  W: 800
+CLHLock
+count: 956584
+time: 2001
+478 pkts / ms
+Lock: 4  S: 1  W: 25
+CLHLock
+count: 1793996
+time: 2000
+896 pkts / ms
+Lock: 4  S: 1  W: 200
+CLHLock
+count: 1572102
+time: 2000
+786 pkts / ms
+Lock: 4  S: 1  W: 800
+CLHLock
+count: 709070
+time: 2001
+354 pkts / ms
+Lock: 5  S: 0  W: 25
+MCSLock
+count: 1733687
+time: 2000
+866 pkts / ms
+Lock: 5  S: 0  W: 200
+MCSLock
+count: 2728195
+time: 2000
+1364 pkts / ms
+Lock: 5  S: 0  W: 800
+MCSLock
+count: 972519
+time: 2001
+486 pkts / ms
+Lock: 5  S: 1  W: 25
+MCSLock
+count: 2489478
+time: 2001
+1244 pkts / ms
+Lock: 5  S: 1  W: 200
+MCSLock
+count: 1579382
+time: 2000
+789 pkts / ms
+Lock: 5  S: 1  W: 800
+MCSLock
+count: 746544
+time: 2000
+373 pkts / ms
+Lock: 0  S: 0  W: 25
+TASLock
+count: 2370315
+time: 2000
+1185 pkts / ms
+Lock: 0  S: 0  W: 200
+TASLock
+count: 2737380
+time: 2000
+1368 pkts / ms
+Lock: 0  S: 0  W: 800
+TASLock
+count: 937437
+time: 2000
+468 pkts / ms
+Lock: 0  S: 1  W: 25
+TASLock
+count: 2058916
+time: 2000
+1029 pkts / ms
+Lock: 0  S: 1  W: 200
+TASLock
+count: 1851479
+time: 2000
+925 pkts / ms
+Lock: 0  S: 1  W: 800
+TASLock
+count: 881095
+time: 2000
+440 pkts / ms
+Lock: 1  S: 0  W: 25
+BackoffLock
+count: 2399945
+time: 2000
+1199 pkts / ms
+Lock: 1  S: 0  W: 200
+BackoffLock
+count: 2699433
+time: 2000
+1349 pkts / ms
+Lock: 1  S: 0  W: 800
+BackoffLock
+count: 971317
+time: 2000
+485 pkts / ms
+Lock: 1  S: 1  W: 25
+BackoffLock
+count: 2407456
+time: 2000
+1203 pkts / ms
+Lock: 1  S: 1  W: 200
+BackoffLock
+count: 1626758
+time: 2001
+812 pkts / ms
+Lock: 1  S: 1  W: 800
+BackoffLock
+count: 918167
+time: 2001
+458 pkts / ms
+Lock: 4  S: 0  W: 25
+CLHLock
+count: 2562638
+time: 2000
+1281 pkts / ms
+Lock: 4  S: 0  W: 200
+CLHLock
+count: 2630878
+time: 2000
+1315 pkts / ms
+Lock: 4  S: 0  W: 800
+CLHLock
+count: 977293
+time: 2000
+488 pkts / ms
+Lock: 4  S: 1  W: 25
+CLHLock
+count: 2088755
+time: 2000
+1044 pkts / ms
+Lock: 4  S: 1  W: 200
+CLHLock
+count: 1421008
+time: 2000
+710 pkts / ms
+Lock: 4  S: 1  W: 800
+CLHLock
+count: 728499
+time: 2000
+364 pkts / ms
+Lock: 5  S: 0  W: 25
+MCSLock
+count: 2407870
+time: 2000
+1203 pkts / ms
+Lock: 5  S: 0  W: 200
+MCSLock
+count: 2635511
+time: 2000
+1317 pkts / ms
+Lock: 5  S: 0  W: 800
+MCSLock
+count: 970617
+time: 2001
+485 pkts / ms
+Lock: 5  S: 1  W: 25
+MCSLock
+count: 1976038
+time: 2001
+987 pkts / ms
+Lock: 5  S: 1  W: 200
+MCSLock
+count: 1390305
+time: 2000
+695 pkts / ms
+Lock: 5  S: 1  W: 800
+MCSLock
+count: 745698
+time: 2001
+372 pkts / ms
+Lock: 0  S: 0  W: 25
+TASLock
+count: 3281351
+time: 2001
+1639 pkts / ms
+Lock: 0  S: 0  W: 200
+TASLock
+count: 2441850
+time: 2001
+1220 pkts / ms
+Lock: 0  S: 0  W: 800
+TASLock
+count: 990199
+time: 2000
+495 pkts / ms
+Lock: 0  S: 1  W: 25
+TASLock
+count: 2353533
+time: 2001
+1176 pkts / ms
+Lock: 0  S: 1  W: 200
+TASLock
+count: 1841019
+time: 2001
+920 pkts / ms
+Lock: 0  S: 1  W: 800
+TASLock
+count: 980864
+time: 2001
+490 pkts / ms
+Lock: 1  S: 0  W: 25
+BackoffLock
+count: 2229154
+time: 2000
+1114 pkts / ms
+Lock: 1  S: 0  W: 200
+BackoffLock
+count: 2691716
+time: 2001
+1345 pkts / ms
+Lock: 1  S: 0  W: 800
+BackoffLock
+count: 994966
+time: 2001
+497 pkts / ms
+Lock: 1  S: 1  W: 25
+BackoffLock
+count: 2261722
+time: 2001
+1130 pkts / ms
+Lock: 1  S: 1  W: 200
+BackoffLock
+count: 1862970
+time: 2000
+931 pkts / ms
+Lock: 1  S: 1  W: 800
+BackoffLock
+count: 882786
+time: 2001
+441 pkts / ms
+Lock: 4  S: 0  W: 25
+CLHLock
+count: 2209775
+time: 2001
+1104 pkts / ms
+Lock: 4  S: 0  W: 200
+CLHLock
+count: 2398664
+time: 2001
+1198 pkts / ms
+Lock: 4  S: 0  W: 800
+CLHLock
+count: 977628
+time: 2001
+488 pkts / ms
+Lock: 4  S: 1  W: 25
+CLHLock
+count: 2448134
+time: 2001
+1223 pkts / ms
+Lock: 4  S: 1  W: 200
+CLHLock
+count: 1274582
+time: 2000
+637 pkts / ms
+Lock: 4  S: 1  W: 800
+CLHLock
+count: 679378
+time: 2001
+339 pkts / ms
+Lock: 5  S: 0  W: 25
+MCSLock
+count: 1971963
+time: 2001
+985 pkts / ms
+Lock: 5  S: 0  W: 200
+MCSLock
+count: 2570413
+time: 2001
+1284 pkts / ms
+Lock: 5  S: 0  W: 800
+MCSLock
+count: 992088
+time: 2001
+495 pkts / ms
+Lock: 5  S: 1  W: 25
+MCSLock
+count: 2429982
+time: 2001
+1214 pkts / ms
+Lock: 5  S: 1  W: 200
+MCSLock
+count: 1386706
+time: 2000
+693 pkts / ms
+Lock: 5  S: 1  W: 800
+MCSLock
+count: 769695
+time: 2001
+384 pkts / ms
+----------========== Showing results for Packet (Test #1) scenario ==========----------
+Packet (Test #1) CSV output: 
+
+6649,6567,2437,
+5687,4886,2301,
+
+
+6599,7168,2431,
+5775,5081,2235,
+
+
+5963,6818,2447,
+5454,3473,1825,
+
+
+6172,6510,2448,
+5708,3798,1887,
+
+----------==========        End of Packet (Test #1) CSV output         ==========----------
+[[[6649, 6567, 2437], [5687, 4886, 2301]], [[6599, 7168, 2431], [5775, 5081, 2235]], [[5963, 6818, 2447], [5454, 3473, 1825]], [[6172, 6510, 2448], [5708, 3798, 1887]]]
+Multicore execution finished.

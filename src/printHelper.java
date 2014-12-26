@@ -82,8 +82,8 @@ public class printHelper {
 		System.out.format("----------========== Showing results for %s scenario ==========----------%n", header);
 		System.out.println(header + " CSV output: ");
 		StringBuilder sb = new StringBuilder();
-        for (int k = 0; k < results3dArray[0].length; k++) { //for each L
-        	sb.append("\n\n\n");
+        for (int k = 0; k < results3dArray.length; k++) { //for each L
+        	sb.append("\n");
             for (int i = 0; i < results3dArray[0].length; i++)
             {
                 for(int j = 0; j < results3dArray[0][0].length; j++)
@@ -94,7 +94,6 @@ public class printHelper {
             }
             System.out.println(sb.toString());
             sb.setLength(0);
-            k++;
         }
         
         System.out.println("----------==========        End of " + header + " CSV output         ==========----------");

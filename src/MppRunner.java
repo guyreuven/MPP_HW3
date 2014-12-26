@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class MppRunner {
 		String[] pickingQueueAlg = null;
 		String[] meanInputsArgs  = null;
 
-		final Tests_e runningScenario = Tests_e.COUNTER_IdleLockOverhead;
+		final Tests_e runningScenario = Tests_e.PACKET_IdleLockOverhead;
 
 		switch (runningScenario) {
 		case COUNTER_IdleLockOverhead:	
@@ -109,12 +110,15 @@ public class MppRunner {
 							parallelPacketResults[k][j][i] += ParallelPacket.main(arguments); 
 							i++;
 						}
+						i = 0;
 						j++;
 					}
+					j = 0;
 					k++;
 				}
 			}
 			printHelper.csvPrinter("Packet (Test #1)", parallelPacketResults);
+			System.out.println(Arrays.deepToString(parallelPacketResults));
 			break;
 
 		case PACKET_SpeedupWithUniformLoad:
