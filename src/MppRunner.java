@@ -4,78 +4,104 @@ public class MppRunner {
 
 	public static void main(String[] args) {
 		int runs 				= 4;
-        int uniform_runs 		= 5;
-        int exponential_runs 	= 11;
-        String M				= "2000";	// test running time
-        
-        final Tests_e runningScenario = Tests_e.COUNTER_IdleLockOverhead;
-        
-        switch (runningScenario) {
+		int uniform_runs 		= 5;
+		int exponential_runs 	= 11;
+		String M				= "2000";	// test running time
+		
+		String[] pickingQueueAlg = null;
+		
+		final Tests_e runningScenario = Tests_e.COUNTER_IdleLockOverhead;
+
+		switch (runningScenario) {
 		case COUNTER_IdleLockOverhead:	
 			System.out.println("Running Idle Lock Overhead test");
-	        System.out.println("===============================\n");
-	        
-	        String[] numSourcesArgs = new String[]{"1"};				// num of threads
-	        String[] lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock 
-	        
-	        long serialCounterResults = 0;
-	        long[] parallelCounterResults = new long[4];
-	        
-	        for (int r = 0; r < runs; r++) {
-	        	String[] arguments = new String[]{M};
-	        	serialCounterResults += SerialCounter.main(arguments)/runs;
-	        }
-	        printHelper.prettyPrint("Serial Counter Result:", serialCounterResults );
-	        
-	        for (int r = 0; r < runs; r++) {
-	            int i = 0;
-	            for (String lock : lockInputsArgs) {
-	            	String[] arguments = new String[]{M, "1", lock, "1"};
-	            	parallelCounterResults[i] += Long.valueOf(ParallelCounter.main(arguments))/runs; 
-	                i++;
-	            }
-	        }
-	        printHelper.csvPrinter("Parallel Counter (Test #1)", parallelCounterResults);
-	     
+			System.out.println("===============================\n");
+
+			String[] numSourcesArgs = new String[]{"1"};				// num of threads
+			String[] lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock 
+
+			long serialCounterResults = 0;
+			long[] parallelCounterResults = new long[4];
+
+			for (int r = 0; r < runs; r++) {
+				String[] arguments = new String[]{M};
+				serialCounterResults += SerialCounter.main(arguments)/runs;
+			}
+			printHelper.prettyPrint("Serial Counter Result:", serialCounterResults );
+
+			for (int r = 0; r < runs; r++) {
+				int i = 0;
+				for (String lock : lockInputsArgs) {
+					String[] arguments = new String[]{M, "1", lock, "1"};
+					parallelCounterResults[i] += Long.valueOf(ParallelCounter.main(arguments))/runs; 
+					i++;
+				}
+			}
+			printHelper.csvPrinter("Parallel Counter (Test #1)", parallelCounterResults);
+
 		case COUNTER_LockScaling:	
 			// Optimize the DELAY params
-			
+
 			System.out.println("Running Backoff Lock optimization test");
-	        System.out.println("======================================\n");
+			System.out.println("======================================\n");
 			String[] arguments = new String[]{M, "32", "1"};
 			long optimizedMinResult = ParallelCounterBackOffLockBenckmark.main(arguments);
 			System.out.println(optimizedMinResult);
-	     
+
 		case COUNTER_Fairness:
-			
+
 			System.out.println("Running Fairness test");
-	        System.out.println("======================\n");
-	        
-	        numSourcesArgs = new String[]{"32"};				// num of threads
-	        lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock 
-			
-			
-	        
-	        
-	        
-			
+			System.out.println("======================\n");
+
+			numSourcesArgs = new String[]{"32"};				// num of threads
+			lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock 
+
+
+
+
+
+
 		case PACKET_IdleLockOverhead:
-			
+			System.out.println("Running PACKET_IdleLockOverhead test");
+			System.out.println("===============================\n");
+
+			numSourcesArgs = new String[]{"1"};				// num of threads
+			lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock
+			pickingQueueAlg = new String[]{"0","1"};	// LockFree((short) 0, HomeQueue ((short) 1), RandomQueue ((short) 2), LastQueue((short) 3);
+
+			serialCounterResults = 0;
+			parallelCounterResults = new long[4];
+
+			for (int r = 0; r < uniform_runs; r++) {
+				arguments = new String[]{M};
+				serialCounterResults += SerialCounter.main(arguments)/runs;
+			}
+			printHelper.prettyPrint("Serial Counter Result:", serialCounterResults );
+
+			for (int r = 0; r < runs; r++) {
+				int i = 0;
+				for (String lock : lockInputsArgs) {
+					arguments = new String[]{M, "1", lock, "1"};
+					parallelCounterResults[i] += Long.valueOf(ParallelCounter.main(arguments))/runs; 
+					i++;
+				}
+			}
+			printHelper.csvPrinter("Packet (Test #1)", parallelCounterResults);
 			break;
-			
+
 		case PACKET_SpeedupWithUniformLoad:
-			
+
 			break;
 
 		case PACKET_SpeedupWithExponentialLoad:
-			
+
 			break;
-		
-			
-        }
+
+
+		}
 	}
 }
-	        
+
 //	        long[][] serialFirewallResults = new long[3][3];
 //	        long[][] serialQueueFirewallResults = new long[3][3];
 //	        for (int r = 0; r < runs; r++) {
