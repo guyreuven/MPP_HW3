@@ -111,9 +111,10 @@ class ParallelPacketWorker implements PacketWorker {
 	public void run() {
 		Packet tmp = null;
 		Random rand = new Random();
+		Integer randSelection = null;
 		
 		while( !done.value )	{ // || !(lamportQueue.head == lamportQueue.tail)) {
-			int randSelection = rand.nextInt(numSources + 1);
+			
 			LamportsQueue<Packet> lamportQueue = null;
 			// first, choose and handle the relevant strategy
 			switch (this.strategy) {		// assuming the strategies are: LockFree: 0, HomeQueue: 1, RandomQueue: 2, LastQueue: 3
@@ -156,7 +157,7 @@ class ParallelPacketWorker implements PacketWorker {
 				break;
 				
 		    case RandomQueue:	// in this case - The Worker picks a random queue to work on for each dequeue attempt
-				
+		    	randSelection = rand.nextInt(numSources);
 		    	lamportQueue = lamportQueueBank[randSelection];
 		    	if (!(lamportQueue.head == lamportQueue.tail))	{
 		    		try {
@@ -179,7 +180,9 @@ class ParallelPacketWorker implements PacketWorker {
 				
 		    case LastQueue:	// in this case -
 		    	Boolean successFlag = false;
+		    	Boolean firstLock 	= true;
 		    	while (!successFlag) {
+		    		randSelection = rand.nextInt(numSources);
 		    		lamportQueue = lamportQueueBank[randSelection];
 		    		if (lamportQueue.head == lamportQueue.tail)	{
 		    			continue;
@@ -189,23 +192,28 @@ class ParallelPacketWorker implements PacketWorker {
 		    		}
 		    	}
 		    	
-		    	try {
-	    			lamportQueue.lock.lock();
-	    			
-	    			//dequeue the next packet from the relevant Lamport queue into tmp
-					tmp = lamportQueue.deq();
-					numOfPackets++;
-					fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed); 
-				} catch (EmptyException e) {
-					if(done.value)
-					{
-						break;
-					}
-				} finally	{
-					lamportQueue.lock.unlock();
-				}
+		    	while (true)	{	//dequeue the next packet from the relevant Lamport queue into tmp, until queue is empty
+    				try 	{
+    					if (firstLock)	{
+    						firstLock = false;
+    					}
+    					else {
+    						lamportQueue.lock.lock();
+    					}
+						tmp = lamportQueue.deq();
+						numOfPackets++;
+						fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed);
+    				}	catch (EmptyException e) {
+    					if(done.value)
+    					{
+    						break;
+    					}
+    				} finally	{
+    					lamportQueue.lock.unlock();
+    				}
+    			}
 				break;
-
+				
 			default:
 				break;
 			}
