@@ -35,6 +35,7 @@ public class MppRunner {
 	                i++;
 	            }
 	        }
+	        printHelper.csvPrinter("Parallel Counter (Test #1)", parallelCounterResults);
 	        
         }
 	}
