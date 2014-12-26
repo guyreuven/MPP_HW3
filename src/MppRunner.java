@@ -111,6 +111,25 @@ public class MppRunner {
 
 		case PACKET_SpeedupWithUniformLoad:
 
+			String[] meanInputsArgs = new String[]{"1000", "1600"};
+	        numSourcesArgs = new String[]{"1", "4", "10"};
+	        lockInputsArgs = new String[]{"0", "1"};
+	        String[] strategyInputsArgs = new String[]{"0", "2", "3"};
+	        
+	        for (int r = 0; r < runs; r++) {
+	            int i = 0;
+	            for (String numSources : numSourcesArgs) {
+	                int j = 0;
+	                for (String mean : meanInputsArgs) {
+	                    String[] arguments = new String[]{"2000", numSources, mean, "false", "8", "1"};
+	                    serialFirewallResults[i][j] += SerialFirewall.runSerialFirewall(arguments)/runs;
+	                    serialQueueFirewallResults[i][j] += SerialQueueFirewall.runSerialQueueFirewall(arguments)/runs;
+	                    j++;
+	                }
+	                i++;
+	            }
+	        }
+	       
 			break;
 
 		case PACKET_SpeedupWithExponentialLoad:
