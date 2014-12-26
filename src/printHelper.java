@@ -6,6 +6,11 @@ public class printHelper {
 		System.out.format("%-18s %10d%n", header, value); 
 	}
 	
+	public static void prettyPrint(String header, double value) {
+		
+		System.out.format("%-18s %10f%n", header, value); 
+	}
+	
 	public static void prettyPrint(String header, long value, String units) {
 		
 		System.out.format("%-18s %10d %10s%n", header, value, units);

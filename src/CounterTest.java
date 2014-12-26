@@ -1,7 +1,7 @@
 //import java.util.lang.*;
 // This application launches a single worker who implements a counter with no locks
 class SerialCounter {
-  public static void main(String[] args) {  
+  public static long main(String[] args) {  
     final int numMilliseconds = Integer.parseInt(args[0]);
     
     StopWatch timer = new StopWatch();
@@ -19,15 +19,22 @@ class SerialCounter {
     try {
       workerThread.join();
     } catch (InterruptedException ignore) {;}
-    System.out.println("count: " + totalCount);
-    System.out.println("time: " + timer.getElapsedTime());
-    System.out.println(totalCount/timer.getElapsedTime() + " inc / ms");
+//    System.out.println("count: " + totalCount);
+//    System.out.println("time: " + timer.getElapsedTime());
+//    System.out.println(totalCount/timer.getElapsedTime() + " inc / ms");
+    
+    printHelper.prettyPrint("Count", totalCount);
+    printHelper.prettyPrint("Time", timer.getElapsedTime());
+    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " pkts / ms");
+  
+  	return totalCount/timer.getElapsedTime();
+    
   }  
 }
 
 // This application launches numThreads workers who try to lock the counter and increment it
 class ParallelCounter {
-  public static void main(String[] args) {
+  public static double main(String[] args) {
     final int numMilliseconds = Integer.parseInt(args[0]);
     final int numThreads = Integer.parseInt(args[1]);
     final int lockType = Integer.parseInt(args[2]);
@@ -67,9 +74,12 @@ class ParallelCounter {
     timer.stopTimer(); // measure the throughput...
     done.value = true;
     final long totalCount = counter.value.counter;
-    System.out.println("count: " + totalCount);
-    System.out.println("time: " + timer.getElapsedTime());
-    System.out.println(totalCount/timer.getElapsedTime() + " inc / ms");
+//    System.out.println("count: " + totalCount);
+//    System.out.println("time: " + timer.getElapsedTime());
+//    System.out.println(totalCount/timer.getElapsedTime() + " inc / ms");
+    printHelper.prettyPrint("Count", totalCount);
+    printHelper.prettyPrint("Time", timer.getElapsedTime());
+    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " pkts / ms");
 
     lock.unlock(); // give the workers a chance to see done.value == true
     
@@ -81,5 +91,7 @@ class ParallelCounter {
       } catch (InterruptedException ignore) {;}      
     }
     System.out.println(Statistics.getStdDev(count));
+    
+    return totalCount/timer.getElapsedTime();
   }  
 }
