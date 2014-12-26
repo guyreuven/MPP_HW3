@@ -155,7 +155,6 @@ class ParallelFirewall {
     	ParallelPacketWorker parallelPacketWorker = new ParallelPacketWorker(doneArr[i], lamportQbank[i]);
     	parallelPacketWorkers[i] = parallelPacketWorker;
     	parallelPacketWorkerThreads[i] = new Thread(parallelPacketWorker);
-        
     }
 
     

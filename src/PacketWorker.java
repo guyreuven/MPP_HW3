@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public interface PacketWorker extends Runnable {
 	public void run();
 }
@@ -89,27 +91,125 @@ class ParallelPacketWorker implements PacketWorker {
 	final Fingerprint residue = new Fingerprint();
 	long fingerprint = 0;
 	long numOfPackets = 0;
-	final LamportsQueue<Packet> lamportQueue;
+	int numSources = 0;
+	int workerId = 0;
+	Strategy_e strategy = null;
+	final LamportsQueue<Packet>[] lamportQueueBank;
 
-	public ParallelPacketWorker(PaddedPrimitiveNonVolatile<Boolean> done, LamportsQueue<Packet> lamportQueue) {
+	public ParallelPacketWorker(PaddedPrimitiveNonVolatile<Boolean> done, 
+								LamportsQueue<Packet>[] lamportQueueBank,
+								int workerId,
+								int numSources,
+								Strategy_e strategy) {
 		this.done = done;
-		this.lamportQueue = lamportQueue;
+		this.lamportQueueBank = lamportQueueBank;
+		this.workerId = workerId;
+		this.numSources = numSources;
+		this.strategy = strategy;
 	}
 
 	public void run() {
-		Packet tmp;
-		while( !done.value || !(lamportQueue.head == lamportQueue.tail)) {
-			try {
-				//dequeue the next packet from the ith Lamport queue into tmp
-				tmp = this.lamportQueue.deq();
-				numOfPackets++;
-				fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed); 
-			} catch (EmptyException e) {
-				if(done.value)
-				{
-					break;
+		Packet tmp = null;
+		Random rand = new Random();
+		
+		while( !done.value )	{ // || !(lamportQueue.head == lamportQueue.tail)) {
+			int randSelection = rand.nextInt(numSources + 1);
+			LamportsQueue<Packet> lamportQueue = null;
+			// first, choose and handle the relevant strategy
+			switch (this.strategy) {		// assuming the strategies are: LockFree: 0, HomeQueue: 1, RandomQueue: 2, LastQueue: 3
+			
+		    case LockFree:	// in this case - create a 1-to-1 mapping between queue and Worker
+		    	lamportQueue = lamportQueueBank[workerId];
+		    	if (!(lamportQueue.head == lamportQueue.tail))	{
+		    		try {
+						//dequeue the next packet from the relevant Lamport queue into tmp
+						tmp = lamportQueue.deq();
+						numOfPackets++;
+						fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed); 
+					} catch (EmptyException e) {
+						if(done.value)
+						{
+							break;
+						}
+					}
+		    	}
+				break;
+		    case HomeQueue:	// in this case - fixed mapping as in LockFree, but with the added requirement that the worker grabs the (albeit uncontended) lock for the associated queue
+		    	lamportQueue = lamportQueueBank[workerId];
+		    	if (!(lamportQueue.head == lamportQueue.tail))	{
+		    		try {
+		    			lamportQueue.lock.lock();
+		    			
+		    			//dequeue the next packet from the relevant Lamport queue into tmp
+						tmp = lamportQueue.deq();
+						numOfPackets++;
+						fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed); 
+					} catch (EmptyException e) {
+						if(done.value)
+						{
+							break;
+						}
+					} finally	{
+						lamportQueue.lock.unlock();
+					}
+		    	}
+				break;
+				
+		    case RandomQueue:	// in this case - The Worker picks a random queue to work on for each dequeue attempt
+				
+		    	lamportQueue = lamportQueueBank[randSelection];
+		    	if (!(lamportQueue.head == lamportQueue.tail))	{
+		    		try {
+		    			lamportQueue.lock.lock();
+		    			
+		    			//dequeue the next packet from the relevant Lamport queue into tmp
+						tmp = lamportQueue.deq();
+						numOfPackets++;
+						fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed); 
+					} catch (EmptyException e) {
+						if(done.value)
+						{
+							break;
+						}
+					} finally	{
+						lamportQueue.lock.unlock();
+					}
+		    	}
+				break;
+				
+		    case LastQueue:	// in this case -
+		    	Boolean successFlag = false;
+		    	while (!successFlag) {
+		    		lamportQueue = lamportQueueBank[randSelection];
+		    		if (lamportQueue.head == lamportQueue.tail)	{
+		    			continue;
+		    		}
+		    		else 	{	// the queue isn't full, so try to acquire the lock
+		    			successFlag = lamportQueue.lock.tryLock();
+		    		}
+		    	}
+		    	
+		    	try {
+	    			lamportQueue.lock.lock();
+	    			
+	    			//dequeue the next packet from the relevant Lamport queue into tmp
+					tmp = lamportQueue.deq();
+					numOfPackets++;
+					fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed); 
+				} catch (EmptyException e) {
+					if(done.value)
+					{
+						break;
+					}
+				} finally	{
+					lamportQueue.lock.unlock();
 				}
+				break;
+
+			default:
+				break;
 			}
+			
 		}
 	}  
 
