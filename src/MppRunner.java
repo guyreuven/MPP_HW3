@@ -104,6 +104,7 @@ public class MppRunner {
 					{
 						for(String W : meanInputsArgs)
 						{
+							System.out.println("Lock: " + lock + "  S: " + S + "  W: " + W);
 							arguments = new String[]{M, "1", W, "true","4","8",lock,S}; //M,n,W,Uniform flag,experimentNum,queue depth,lockType,S
 							parallelPacketResults[k][j][i] += ParallelPacket.main(arguments); 
 							i++;
@@ -113,29 +114,29 @@ public class MppRunner {
 					k++;
 				}
 			}
-			printHelper.csvPrinter("Packet (Test #1)", parallelCounterResults);
+			printHelper.csvPrinter("Packet (Test #1)", parallelPacketResults);
 			break;
 
 		case PACKET_SpeedupWithUniformLoad:
 
-			String[] meanInputsArgs = new String[]{"1000", "1600"};
-	        numSourcesArgs = new String[]{"1", "4", "10"};
-	        lockInputsArgs = new String[]{"0", "1"};
-	        String[] strategyInputsArgs = new String[]{"0", "2", "3"};
-	        
-	        for (int r = 0; r < runs; r++) {
-	            int i = 0;
-	            for (String numSources : numSourcesArgs) {
-	                int j = 0;
-	                for (String mean : meanInputsArgs) {
-	                    String[] arguments = new String[]{"2000", numSources, mean, "false", "8", "1"};
-	                    serialFirewallResults[i][j] += SerialFirewall.runSerialFirewall(arguments)/runs;
-	                    serialQueueFirewallResults[i][j] += SerialQueueFirewall.runSerialQueueFirewall(arguments)/runs;
-	                    j++;
-	                }
-	                i++;
-	            }
-	        }
+//			String[] meanInputsArgs = new String[]{"1000", "1600"};
+//	        numSourcesArgs = new String[]{"1", "4", "10"};
+//	        lockInputsArgs = new String[]{"0", "1"};
+//	        String[] strategyInputsArgs = new String[]{"0", "2", "3"};
+//	        
+//	        for (int r = 0; r < runs; r++) {
+//	            int i = 0;
+//	            for (String numSources : numSourcesArgs) {
+//	                int j = 0;
+//	                for (String mean : meanInputsArgs) {
+//	                    String[] arguments = new String[]{"2000", numSources, mean, "false", "8", "1"};
+//	                    serialFirewallResults[i][j] += SerialFirewall.runSerialFirewall(arguments)/runs;
+//	                    serialQueueFirewallResults[i][j] += SerialQueueFirewall.runSerialQueueFirewall(arguments)/runs;
+//	                    j++;
+//	                }
+//	                i++;
+//	            }
+//	        }
 	       
 			break;
 
