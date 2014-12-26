@@ -107,13 +107,19 @@ class ParallelCounterBackOffLockBenckmark {
 		
 		lock.setMinDelay(0);
 		int lowResult = 0;
-		int highResult = 100000000;
-		float minDeviation = (float) 0.01;	// set the point where the change isn't relevant anymore
-		long oldTestResult = 54537;	// initialized value
+		int highResult = 1000000000;
+		float minDeviation = (float) 0.0001;	// set the point where the change isn't relevant anymore
+		long oldTestResult = 0;	// initialized value
 		long testResult = ParallelCounterSingleIter(numThreads, numMilliseconds);
 		
+//		for(int delay = 0; delay < 100000000; delay+=10000)
+//		{
+//			lock.setMinDelay(delay);	
+//			long tmpTestResult = ParallelCounterSingleIter(numThreads, numMilliseconds);
+//		}
 		while ( Math.abs((testResult/oldTestResult)-1) > minDeviation ) 	{
 			int midResult = (int) ( lowResult + (highResult-lowResult)/2 );
+			System.out.println(midResult);
 			lock.setMinDelay(midResult);
 			
 			long tmpTestResult = ParallelCounterSingleIter(numThreads, numMilliseconds);
@@ -123,6 +129,8 @@ class ParallelCounterBackOffLockBenckmark {
 			else	{
 				highResult = midResult;
 			}
+			oldTestResult = testResult;
+			testResult = tmpTestResult;
 		}
 		
 		System.out.println("Low Result is : " + Integer.toString(lowResult));

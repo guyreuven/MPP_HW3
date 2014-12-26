@@ -1,0 +1,104 @@
+Running Idle Lock Overhead test
+===============================
+
+Count               296062564
+Time                     2000
+Total packets/ms       148031  pkts / ms
+Count               296919311
+Time                     2000
+Total packets/ms       148459  pkts / ms
+Count               299036156
+Time                     2000
+Total packets/ms       149518  pkts / ms
+Count               299069946
+Time                     2000
+Total packets/ms       149534  pkts / ms
+Serial Counter Result:     148883
+TASLock
+Count                97129778
+Time                     2000
+Total packets/ms        48564  pkts / ms
+0.0
+BackoffLock
+Count                91577240
+Time                     2001
+Total packets/ms        45765  pkts / ms
+0.0
+CLHLock
+Count                27882232
+Time                     2000
+Total packets/ms        13941  pkts / ms
+0.0
+MCSLock
+Count                34966401
+Time                     2000
+Total packets/ms        17483  pkts / ms
+0.0
+TASLock
+Count                68742651
+Time                     2000
+Total packets/ms        34371  pkts / ms
+0.0
+BackoffLock
+Count                75950638
+Time                     2000
+Total packets/ms        37975  pkts / ms
+0.0
+CLHLock
+Count                26914119
+Time                     2000
+Total packets/ms        13457  pkts / ms
+0.0
+MCSLock
+Count                35179794
+Time                     2000
+Total packets/ms        17589  pkts / ms
+0.0
+TASLock
+Count                69350719
+Time                     2000
+Total packets/ms        34675  pkts / ms
+0.0
+BackoffLock
+Count                72556601
+Time                     2000
+Total packets/ms        36278  pkts / ms
+0.0
+CLHLock
+Count                26073811
+Time                     2000
+Total packets/ms        13036  pkts / ms
+0.0
+MCSLock
+Count                35182486
+Time                     2000
+Total packets/ms        17591  pkts / ms
+0.0
+TASLock
+Count                69345193
+Time                     2000
+Total packets/ms        34672  pkts / ms
+0.0
+BackoffLock
+Count                72744645
+Time                     2000
+Total packets/ms        36372  pkts / ms
+0.0
+CLHLock
+Count                27015384
+Time                     2000
+Total packets/ms        13507  pkts / ms
+0.0
+MCSLock
+Count                35182779
+Time                     2001
+Total packets/ms        17582  pkts / ms
+0.0
+----------========== Showing results for Parallel Counter (Test #1) scenario ==========----------
+Parallel Counter (Test #1) CSV output: 
+38069,
+39096,
+13484,
+17559,
+----------==========        End of Parallel Counter (Test #1) CSV output         ==========----------
+Multicore execution finished.
