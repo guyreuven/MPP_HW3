@@ -32,11 +32,11 @@ class TASLock implements Lock {
 
 class Backoff { // helper class for the BackoffLock
 	volatile int tmp = 100;
-	final int minDelay, maxDelay;
-	int limit;
+	final long minDelay, maxDelay;
+	long limit;
 	int seed;
 
-	public Backoff(int minDelay, int maxDelay) {
+	public Backoff(long minDelay, long maxDelay) {
 		this.minDelay = minDelay;
 		this.maxDelay = maxDelay;
 		this.limit = minDelay;
@@ -53,8 +53,8 @@ class Backoff { // helper class for the BackoffLock
 
 class BackoffLock implements Lock {
 	private AtomicBoolean state = new AtomicBoolean(false);
-	private static int MIN_DELAY = 6193; // You should tune these parameters...
-	private static final int MAX_DELAY = 100000000;
+	private static long MIN_DELAY = 6193; // You should tune these parameters...
+	private static final long MAX_DELAY = 100000000;
 
 	public void lock() {
 		while(state.get()) {;} // try to get the lock once before allocating a new Backoff(...)
@@ -91,7 +91,7 @@ class BackoffLock implements Lock {
 		state.set(false);
 	}
 	
-	public void setMinDelay (int delay) {
+	public void setMinDelay (long delay) {
 		this.MIN_DELAY = delay;
 	}
 }

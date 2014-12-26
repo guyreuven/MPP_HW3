@@ -113,7 +113,7 @@ class ParallelCounter {
 class ParallelCounterBackOffLockBenckmark {
 	static BackoffLock lock = null;
 	
-	public static int main(String[] args) {
+	public static long main(String[] args) {
 		final int numMilliseconds = Integer.parseInt(args[0]);
 		final int numThreads = Integer.parseInt(args[1]);
 
@@ -122,35 +122,35 @@ class ParallelCounterBackOffLockBenckmark {
 		
 		lock.setMinDelay(0);
 
-		int lowResult = 0;
-		int highResult = 1000000000;
+		long lowResult = 0;
+		long highResult = 1000000000;
 		float minDeviation = (float) 0.0001;	// set the point where the change isn't relevant anymore
 		long oldTestResult = 1;	// initialized value
 		long testResult = ParallelCounterSingleIter(numThreads, numMilliseconds);
 		
-//		for(int delay = 0; delay < 100000000; delay+=10000)
-//		{
-//			lock.setMinDelay(delay);	
-//			long tmpTestResult = ParallelCounterSingleIter(numThreads, numMilliseconds);
-//		}
-		while ( Math.abs((testResult/oldTestResult)-1) > minDeviation ) 	{
-			int midResult = (int) ( lowResult + (highResult-lowResult)/2 );
-			System.out.println(midResult);
-			lock.setMinDelay(midResult);
-			
+		for(long delay = 0; delay < 100000000; delay+=10000)
+		{
+			lock.setMinDelay(delay);	
 			long tmpTestResult = ParallelCounterSingleIter(numThreads, numMilliseconds);
-			if (tmpTestResult > testResult)	{
-				lowResult = midResult;
-			}
-			else	{
-				highResult = midResult;
-			}
-			oldTestResult = testResult;
-			testResult = tmpTestResult;
 		}
+//		while ( Math.abs((testResult/oldTestResult)-1) > minDeviation ) 	{
+//			int midResult = (int) ( lowResult + (highResult-lowResult)/2 );
+//			System.out.println(midResult);
+//			lock.setMinDelay(midResult);
+//			
+//			long tmpTestResult = ParallelCounterSingleIter(numThreads, numMilliseconds);
+//			if (tmpTestResult > testResult)	{
+//				lowResult = midResult;
+//			}
+//			else	{
+//				highResult = midResult;
+//			}
+//			oldTestResult = testResult;
+//			testResult = tmpTestResult;
+//		}
 		
-		System.out.println("Low Result is : " + Integer.toString(lowResult));
-		System.out.println("High Result is: " + Integer.toString(highResult));
+		System.out.println("Low Result is : " + Long.toString(lowResult));
+		System.out.println("High Result is: " + Long.toString(highResult));
 		return lowResult;
 	}
 		
