@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+
 //import prettyPrint;
 
 public class MppRunner {
@@ -36,7 +39,8 @@ public class MppRunner {
 	            }
 	        }
 	        printHelper.csvPrinter("Parallel Counter (Test #1)", parallelCounterResults);
-	     
+	        
+	        break;
 		case COUNTER_LockScaling:	
 			// Optimize the DELAY params
 			
@@ -45,19 +49,35 @@ public class MppRunner {
 			String[] arguments = new String[]{M, "32", "1"};
 			long optimizedMinResult = ParallelCounterBackOffLockBenckmark.main(arguments);
 			System.out.println(optimizedMinResult);
-	     
+			
+			break;
 		case COUNTER_Fairness:
 			
 			System.out.println("Running Fairness test");
 	        System.out.println("======================\n");
 	        
-	        numSourcesArgs = new String[]{"32"};				// num of threads
+//	        numSourcesArgs = new String[]{"32"};				// num of threads
 	        lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock 
 			
-			
+	        long[] parallelCounterThroughputResults = new long[4];
+	        double[] parallelCounterDeviationResults = new double[4];
 	        
+	        for (int r = 0; r < runs; r++) {
+	            int i = 0;
+	            for (String lock : lockInputsArgs) {
+	            	arguments = new String[]{M, "32", lock, "3"};
+	            	String result = ParallelCounter.main(arguments);
+	            	final List<String> items = Arrays.asList(result.split("\\s*,\\s*"));
+	            	
+	            	parallelCounterDeviationResults[i] += Double.valueOf(items.get(0))/runs;
+	            	parallelCounterThroughputResults[i] += Long.valueOf(items.get(1))/runs;
+	            	
+	                i++;
+	            }
+	        }
+	        printHelper.csvPrinter("Parallel Counter Fairness (Test #3)", parallelCounterThroughputResults, parallelCounterDeviationResults);
 	        
-	        
+			break;
 			
 		case PACKET_IdleLockOverhead:
 			

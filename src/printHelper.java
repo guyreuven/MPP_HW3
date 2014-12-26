@@ -59,5 +59,21 @@ public class printHelper {
         System.out.println("----------==========        End of " + header + " CSV output         ==========----------");
 		
 	}
+	
+	public static void csvPrinter(String header, long[] resultsArray, double[] resultsArray2)	{
+		
+		System.out.format("----------========== Showing results for %s scenario ==========----------%n", header);
+		System.out.println(header + " CSV output: ");
+		StringBuilder sb = new StringBuilder();
+        
+		for (int i=0; i < resultsArray.length; i++ )	{
+			sb.append(resultsArray[i] + "," + resultsArray2[i] + ", ");
+			System.out.println(sb.toString());
+			sb.setLength(0);
+		}
+        
+        System.out.println("----------==========        End of " + header + " CSV output         ==========----------");
+		
+	}
 
 }
