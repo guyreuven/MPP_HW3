@@ -17,7 +17,7 @@ public class LamportsQueue<T> {
 		head = 0; tail = 0;
 		LockAllocator la = new LockAllocator();
 	    this.lock = la.getLock(lockType);
-	    la.printLockType(lockType);
+//	    la.printLockType(lockType);
 	}
 	
 	
