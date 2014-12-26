@@ -53,6 +53,8 @@ public class MppRunner {
 			String[] arguments = new String[]{M, "32", "1"};
 			long optimizedMinResult = ParallelCounterBackOffLockBenckmark.main(arguments);
 			System.out.println(optimizedMinResult);
+			
+			
 
 			break;
 		case COUNTER_Fairness:
@@ -64,9 +66,10 @@ public class MppRunner {
 			//	        numSourcesArgs = new String[]{"32"};				// num of threads
 			lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock 
 
-			long[] parallelCounterThroughputResults = new long[4];
-			double[] parallelCounterDeviationResults = new double[4];
-
+			long[] parallelCounterThroughputResults = new long[4*runs];
+			double[] parallelCounterDeviationResults = new double[4*runs];
+			
+			// we don't normalize scatter graph on the num of runs
 			for (int r = 0; r < runs; r++) {
 				int i = 0;
 				for (String lock : lockInputsArgs) {
@@ -74,8 +77,8 @@ public class MppRunner {
 					String result = ParallelCounter.main(arguments);
 					final List<String> items = Arrays.asList(result.split("\\s*,\\s*"));
 
-					parallelCounterDeviationResults[i] += Double.valueOf(items.get(0))/runs;
-					parallelCounterThroughputResults[i] += Long.valueOf(items.get(1))/runs;
+					parallelCounterDeviationResults[i+r] += Double.valueOf(items.get(0));
+					parallelCounterThroughputResults[i+r] += Long.valueOf(items.get(1));
 
 					i++;
 				}
