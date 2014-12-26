@@ -12,6 +12,7 @@ public class MppRunner {
 		String M				= "2000";	// test running time
 
 		String[] pickingQueueAlg = null;
+		String[] meanInputsArgs  = null;
 
 		final Tests_e runningScenario = Tests_e.COUNTER_IdleLockOverhead;
 
@@ -88,6 +89,7 @@ public class MppRunner {
 			numSourcesArgs = new String[]{"1"};				// num of threads
 			lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock
 			pickingQueueAlg = new String[]{"0","1"};	// LockFree((short) 0, HomeQueue ((short) 1), RandomQueue ((short) 2), LastQueue((short) 3);
+			meanInputsArgs = new String[]{"25", "200", "800"};
 
 			serialCounterResults = 0;
 			parallelCounterResults = new long[4];
