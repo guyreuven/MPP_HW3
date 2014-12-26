@@ -181,7 +181,10 @@ class ParallelPacketWorker implements PacketWorker {
 		    case LastQueue:	// in this case -
 		    	Boolean successFlag = false;
 		    	Boolean firstLock 	= true;
-		    	while (!successFlag && !done.value) {
+		    	while (!successFlag) {
+		    		if (done.value)	{
+		    			break;
+		    		}
 		    		randSelection = rand.nextInt(numSources);
 		    		lamportQueue = lamportQueueBank[randSelection];
 		    		if (lamportQueue.head == lamportQueue.tail)	{
@@ -191,12 +194,10 @@ class ParallelPacketWorker implements PacketWorker {
 		    			successFlag = lamportQueue.lock.tryLock();
 		    		}
 		    	}
-		    	if (done.value) {
-		    		break;
-		    	}
-		    	while (true)	{	//dequeue the next packet from the relevant Lamport queue into tmp, until queue is empty
-    				try 	{
-    					if (firstLock)	{
+		    	
+		    	while (successFlag)	{	//dequeue the next packet from the relevant Lamport queue into tmp, until queue is empty
+		    		try 	{
+		    			if (firstLock)	{
     						firstLock = false;
     					}
     					else {

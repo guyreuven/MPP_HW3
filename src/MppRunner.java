@@ -15,7 +15,7 @@ public class MppRunner {
 		String[] pickingQueueAlg = null;
 		String[] meanInputsArgs  = null;
 
-		final Tests_e runningScenario = Tests_e.PACKET_SpeedupWithUniformLoad;
+		final Tests_e runningScenario = Tests_e.PACKET_SpeedupWithUniformLoad_Phase1;
 
 		switch (runningScenario) {
 		case COUNTER_IdleLockOverhead:	
@@ -121,90 +121,155 @@ public class MppRunner {
 			System.out.println(Arrays.deepToString(parallelPacketResults));
 			break;
 
-		case PACKET_SpeedupWithUniformLoad:
+		case PACKET_SpeedupWithUniformLoad_Phase1:
 			System.out.println("Running PACKET_SpeedupWithUniformLoad test");
 			System.out.println("==========================================\n");
 			
-			meanInputsArgs = new String[]{"1000", "1600"};
+//			meanInputsArgs = new String[]{"1000", "1600"};
 	        numSourcesArgs = new String[]{"1", "4", "10"};
 	        lockInputsArgs = new String[]{"0", "1"};
 	        String[] strategyInputsArgs = new String[]{"0", "2", "3"};
 	        
-	        long[][][][] parallelUniformPacketResults = new long [2][3][2][3];
-	        long[][] serialUniformPacketResults = new long [2][3];
+	        long[][][] parallelUniformPacketResults = new long [3][2][3];
+	        long[] serialUniformPacketResults = new long [3];
 	        
 	        for (int r = 0; r < uniform_runs; r++) {
-	            int i = 0;	            
-	            for (String mean : meanInputsArgs) {
-	                int j = 0;
-	                for (String numSources : numSourcesArgs) {
-	                    int l = 0;
-	                    for (String lock : lockInputsArgs)	{
-	                    	int k = 0;
-	                    	for (String strategy : strategyInputsArgs)	{
-	                    		System.out.println("Lock: " + lock + "\t\tStrategy: " + strategy + "\tMean: " + mean + "\tNumSources: " + numSources);
-	                    		arguments = new String[]{M, numSources, mean, "true", "4", "8", lock, strategy};
-	                    		parallelUniformPacketResults[i][j][l][k] += ParallelPacket.main(arguments)/uniform_runs;
-	                    		
-		                    	k++;
-	                    	}
-	                    	l++;
-	                    }
-	                    String[] args2 = new String[]{M, numSources, mean, "true", "4"};
-	                    serialUniformPacketResults[i][j] += SerialPacket.main(args2)/uniform_runs;
-	                    
-	                    j++;
-	                }
-	                i++;
-	            }
+	        	int j = 0;
+                for (String numSources : numSourcesArgs) {
+                    int l = 0;
+                    for (String lock : lockInputsArgs)	{
+                    	int k = 0;
+                    	for (String strategy : strategyInputsArgs)	{
+                    		System.out.println("Lock: " + lock + "\t\tStrategy: " + strategy + "\tMean: 1000" + "\tNumSources: " + numSources);
+                    		arguments = new String[]{M, numSources, "1000", "true", "4", "8", lock, strategy};
+                    		parallelUniformPacketResults[j][l][k] += ParallelPacket.main(arguments)/uniform_runs;
+                    		
+	                    	k++;
+                    	}
+                    	l++;
+                    }
+                    String[] args2 = new String[]{M, numSources, "1000", "true", "4"};
+                    serialUniformPacketResults[j] += SerialPacket.main(args2)/uniform_runs;
+                    
+                    j++;
+                }
 	        }
-	        printHelper.csvPrinter("Serial Uniform Packet Results (Test #5)", numSourcesArgs, serialUniformPacketResults);
-	        printHelper.csvPrinter("Parallel Uniform Packet Results (Test #5): Mean = 800", parallelUniformPacketResults[0]);
+	        printHelper.csvPrinter("Serial Uniform Packet Results (Test #5): Mean = 1000", serialUniformPacketResults);
+	        printHelper.csvPrinter("Parallel Uniform Packet Results (Test #5): Mean = 1000", parallelUniformPacketResults);
 
 			break;
-
-		case PACKET_SpeedupWithExponentialLoad:
-			System.out.println("Running PACKET_SpeedupWithExponentialLoad test");
+		case PACKET_SpeedupWithUniformLoad_Phase2:
+			System.out.println("Running PACKET_SpeedupWithUniformLoad test");
 			System.out.println("==========================================\n");
 			
-			meanInputsArgs = new String[]{"1000", "1600"};
+//			meanInputsArgs = new String[]{"1000", "1600"};
 	        numSourcesArgs = new String[]{"1", "4", "10"};
 	        lockInputsArgs = new String[]{"0", "1"};
 	        strategyInputsArgs = new String[]{"0", "2", "3"};
 	        
-	        parallelUniformPacketResults = new long [2][3][2][3];
-	        serialUniformPacketResults = new long [2][3];
+	        parallelUniformPacketResults = new long [3][2][3];
+	        serialUniformPacketResults = new long [3];
 	        
 	        for (int r = 0; r < uniform_runs; r++) {
-	            int i = 0;	            
-	            for (String mean : meanInputsArgs) {
-	                int j = 0;
-	                for (String numSources : numSourcesArgs) {
-	                    int l = 0;
-	                    for (String lock : lockInputsArgs)	{
-	                    	int k = 0;
-	                    	for (String strategy : strategyInputsArgs)	{
-	                    		System.out.println("Lock: " + lock + "\t\tStrategy: " + strategy + "\tMean: " + mean + "\tNumSources: " + numSources);
-	                    		arguments = new String[]{M, numSources, mean, "true", "4", "8", lock, strategy};
-	                    		parallelUniformPacketResults[i][j][l][k] += ParallelPacket.main(arguments)/uniform_runs;
-	                    		
-		                    	k++;
-	                    	}
-	                    	l++;
-	                    }
-	                    String[] args2 = new String[]{M, numSources, mean, "true", "4"};
-	                    serialUniformPacketResults[i][j] += SerialPacket.main(args2)/uniform_runs;
-	                    
-	                    j++;
-	                }
-	                i++;
-	            }
+	        	int j = 0;
+                for (String numSources : numSourcesArgs) {
+                    int l = 0;
+                    for (String lock : lockInputsArgs)	{
+                    	int k = 0;
+                    	for (String strategy : strategyInputsArgs)	{
+                    		System.out.println("Lock: " + lock + "\t\tStrategy: " + strategy + "\tMean: 1600" + "\tNumSources: " + numSources);
+                    		arguments = new String[]{M, numSources, "1600", "true", "4", "8", lock, strategy};
+                    		parallelUniformPacketResults[j][l][k] += ParallelPacket.main(arguments)/uniform_runs;
+                    		
+	                    	k++;
+                    	}
+                    	l++;
+                    }
+                    String[] args2 = new String[]{M, numSources, "1600", "true", "4"};
+                    serialUniformPacketResults[j] += SerialPacket.main(args2)/uniform_runs;
+                    
+                    j++;
+                }
 	        }
-	        printHelper.csvPrinter("Serial Uniform Packet Results (Test #5)", numSourcesArgs, serialUniformPacketResults);
-	        printHelper.csvPrinter("Parallel Uniform Packet Results (Test #5): Mean = 800", parallelUniformPacketResults[0]);
+	        printHelper.csvPrinter("Serial Uniform Packet Results (Test #5): Mean = 1600", serialUniformPacketResults);
+	        printHelper.csvPrinter("Parallel Uniform Packet Results (Test #5): Mean = 1600", parallelUniformPacketResults);
 
 			break;
 
+		case PACKET_SpeedupWithExponentialLoad_Phase1:
+			System.out.println("Running PACKET_SpeedupWithUniformLoad test");
+			System.out.println("==========================================\n");
+			
+//			meanInputsArgs = new String[]{"1000", "1600"};
+	        numSourcesArgs = new String[]{"1", "4", "10"};
+	        lockInputsArgs = new String[]{"0", "1"};
+	        strategyInputsArgs = new String[]{"0", "2", "3"};
+	        
+	        parallelUniformPacketResults = new long [3][2][3];
+	        serialUniformPacketResults = new long [3];
+	        
+	        for (int r = 0; r < uniform_runs; r++) {
+	        	int j = 0;
+                for (String numSources : numSourcesArgs) {
+                    int l = 0;
+                    for (String lock : lockInputsArgs)	{
+                    	int k = 0;
+                    	for (String strategy : strategyInputsArgs)	{
+                    		System.out.println("Lock: " + lock + "\t\tStrategy: " + strategy + "\tMean: 1000" + "\tNumSources: " + numSources);
+                    		arguments = new String[]{M, numSources, "1000", "true", "4", "8", lock, strategy};
+                    		parallelUniformPacketResults[j][l][k] += ParallelPacket.main(arguments)/uniform_runs;
+                    		
+	                    	k++;
+                    	}
+                    	l++;
+                    }
+                    String[] args2 = new String[]{M, numSources, "1000", "true", "4"};
+                    serialUniformPacketResults[j] += SerialPacket.main(args2)/uniform_runs;
+                    
+                    j++;
+                }
+	        }
+	        printHelper.csvPrinter("Serial Uniform Packet Results (Test #6): Mean = 1000", serialUniformPacketResults);
+	        printHelper.csvPrinter("Parallel Uniform Packet Results (Test #6): Mean = 1000", parallelUniformPacketResults);
+
+			break;
+		case PACKET_SpeedupWithExponentialLoad_Phase2:
+			System.out.println("Running PACKET_SpeedupWithUniformLoad test");
+			System.out.println("==========================================\n");
+			
+//			meanInputsArgs = new String[]{"1000", "1600"};
+	        numSourcesArgs = new String[]{"1", "4", "10"};
+	        lockInputsArgs = new String[]{"0", "1"};
+	        strategyInputsArgs = new String[]{"0", "2", "3"};
+	        
+	        parallelUniformPacketResults = new long [3][2][3];
+	        serialUniformPacketResults = new long [3];
+	        
+	        for (int r = 0; r < uniform_runs; r++) {
+	        	int j = 0;
+                for (String numSources : numSourcesArgs) {
+                    int l = 0;
+                    for (String lock : lockInputsArgs)	{
+                    	int k = 0;
+                    	for (String strategy : strategyInputsArgs)	{
+                    		System.out.println("Lock: " + lock + "\t\tStrategy: " + strategy + "\tMean: 1600" + "\tNumSources: " + numSources);
+                    		arguments = new String[]{M, numSources, "1600", "true", "4", "8", lock, strategy};
+                    		parallelUniformPacketResults[j][l][k] += ParallelPacket.main(arguments)/uniform_runs;
+                    		
+	                    	k++;
+                    	}
+                    	l++;
+                    }
+                    String[] args2 = new String[]{M, numSources, "1600", "true", "4"};
+                    serialUniformPacketResults[j] += SerialPacket.main(args2)/uniform_runs;
+                    
+                    j++;
+                }
+	        }
+	        printHelper.csvPrinter("Serial Uniform Packet Results (Test #6): Mean = 1600", serialUniformPacketResults);
+	        printHelper.csvPrinter("Parallel Uniform Packet Results (Test #6): Mean = 1600", parallelUniformPacketResults);
+
+			break;
 
 		}
 	}
