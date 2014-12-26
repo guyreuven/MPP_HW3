@@ -32,39 +32,28 @@ public class MppRunner {
         
         System.out.println("Running Dispatcher Rate test");
         System.out.println("===============================\n");
-<<<<<<< Updated upstream
+
         String[] meanInputsArgs2 = {"1","25","100"};
         String[] numSourcesArgs2 = {"1", "4", "10"};
         long[][] ParallelFirewallResults = new long[3][3];
-=======
-        String[] meanInputsArgs2 = new String[]{"1"};
-        String[] numSourcesArgs2 = new String[]{"1", "4", "10"};
-        long[][] ParallelFirewallResults = new long[3][1];
->>>>>>> Stashed changes
+
         for (int r = 0; r < runs; r++) {
             int i = 0;
             for (String numSources : numSourcesArgs2) {
                 int j = 0;
                 for (String mean : meanInputsArgs2) {
-<<<<<<< Updated upstream
+
                     String[] arguments = {"2000", numSources, mean, "false", "8", "1"};
                     ParallelFirewallResults[i][j] += ParallelFirewall.runParallelFirewall(arguments)/runs;
-=======
-                    String[] arguments = new String[]{"2000", numSources, mean, "false", "8", "1"};
-                    ParallelFirewallResults[i][j] += ParallelFirewall.main(arguments)/runs;
->>>>>>> Stashed changes
+
                     j++;
                 }
                 i++;
             }
         }
 
-<<<<<<< Updated upstream
+
         printHelper.csvPrinter("Parallel", numSourcesArgs2, ParallelFirewallResults);
-=======
-//        excel_print("Parallel", numSourcesArgs2, parallel_res2);
-        printHelper.csvPrinter("Parallel (Test #2)", numSourcesArgs2, ParallelFirewallResults);
->>>>>>> Stashed changes
         
         
         System.out.println("Running Speedup with Uniform Load test");
@@ -78,29 +67,19 @@ public class MppRunner {
             for (String numSources : numSourcesArgs3) {
                 int j = 0;
                 for (String mean : meanInputsArgs3) {
-<<<<<<< Updated upstream
+
                     String[] arguments = {"2000", numSources, mean, "false", "8", "1"};
                     serialFirewallResults3[i][j] += SerialFirewall.runSerialFirewall(arguments)/runs;
                     ParallelFirewallResults3[i][j] += ParallelFirewall.runParallelFirewall(arguments)/runs;
-=======
-                    String[] arguments = new String[]{"2000", numSources, mean, "false", "8", "1"};
-                    serialFirewallResults3[i][j] += SerialFirewall.main(arguments)/runs;
-                    ParallelFirewallResults3[i][j] += ParallelFirewall.main(arguments)/runs;
->>>>>>> Stashed changes
+
                     j++;
                 }
                 i++;
             }
         }
-<<<<<<< Updated upstream
+
         printHelper.csvPrinter("Serial", numSourcesArgs3, serialFirewallResults3);
         printHelper.csvPrinter("Parallel", numSourcesArgs3, ParallelFirewallResults3);
-=======
-//        excel_print("Serial", numSourcesArgs3, serialFirewallResults3);
-//        excel_print("Parallel", numSourcesArgs3, ParallelFirewallResults3);
-        printHelper.csvPrinter("Serial (Test #3)", numSourcesArgs3, serialFirewallResults3);
-        printHelper.csvPrinter("Parallel (Test #3)", numSourcesArgs3, ParallelFirewallResults3);
->>>>>>> Stashed changes
 
 
         System.out.println("Running Speedup with Exponentially Distributed Load test");
@@ -115,15 +94,11 @@ public class MppRunner {
             for (String numSources : numSourcesArgs4) {
                 int j = 0;
                 for (String mean : meanInputsArgs4) {
-<<<<<<< Updated upstream
+
                     String[] arguments = {"2000", numSources, mean, "true", "8", "1"};
                     serialFirewallResults4[i][j] += SerialFirewall.runSerialFirewall(arguments)/runs;
                     ParallelFirewallResults4[i][j] += ParallelFirewall.runParallelFirewall(arguments)/runs;
-=======
-                    String[] arguments = new String[]{"2000", numSources, mean, "true", "8", "1"};
-                    serialFirewallResults4[i][j] += SerialFirewall.main(arguments)/runs;
-                    ParallelFirewallResults4[i][j] += ParallelFirewall.main(arguments)/runs;
->>>>>>> Stashed changes
+
                     j++;
                 }
                 i++;
