@@ -34,10 +34,11 @@ class SerialCounter {
 
 // This application launches numThreads workers who try to lock the counter and increment it
 class ParallelCounter {
-  public static long main(String[] args) {
+  public static String main(String[] args) {
     final int numMilliseconds = Integer.parseInt(args[0]);
     final int numThreads = Integer.parseInt(args[1]);
     final int lockType = Integer.parseInt(args[2]);
+    final int returnType = Integer.parseInt(args[3]);
 		
     PaddedPrimitive<CounterStruct> counter = new PaddedPrimitive<CounterStruct>(new CounterStruct());
     PaddedPrimitiveNonVolatile<Boolean> done = new PaddedPrimitiveNonVolatile<Boolean>(false);
@@ -91,7 +92,21 @@ class ParallelCounter {
     }
     System.out.println(Statistics.getStdDev(count));
     
-    return totalCount/timer.getElapsedTime();
+    switch (returnType) {
+	case 1:	// return throughput
+		return String.valueOf(totalCount/timer.getElapsedTime());
+	case 2:	// return Standard Deviation
+		return String.valueOf(Statistics.getStdDev(count));
+	case 3:	// return both throughput and Standard Deviation
+//		String[] retArr = new String[2];
+//		retArr[0] = String.valueOf(Statistics.getStdDev(count));
+//		retArr[1] = String.valueOf(totalCount/timer.getElapsedTime());
+		return String.valueOf(Statistics.getStdDev(count)) + ", " + String.valueOf(totalCount/timer.getElapsedTime());
+
+	default:
+		return String.valueOf(totalCount/timer.getElapsedTime());
+	}
+    
   }  
 }
 //This application launches numThreads workers who try to lock the counter and increment it
@@ -106,7 +121,7 @@ class ParallelCounterBackOffLockBenckmark {
 		lock = new BackoffLock();
 		
 		lock.setMinDelay(0);
-		int lowResult = 0;
+		int lowResult  = 0;
 		int highResult = 100000000;
 		float minDeviation = (float) 0.01;	// set the point where the change isn't relevant anymore
 		long oldTestResult = 54537;	// initialized value
