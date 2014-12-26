@@ -91,21 +91,26 @@ public class MppRunner {
 			pickingQueueAlg = new String[]{"0","1"};	// LockFree((short) 0, HomeQueue ((short) 1), RandomQueue ((short) 2), LastQueue((short) 3);
 			meanInputsArgs = new String[]{"25", "200", "800"};
 
-			serialCounterResults = 0;
-			parallelCounterResults = new long[4];
+			long[][][] parallelPacketResults = new long[4][2][3];
 
-			for (int r = 0; r < uniform_runs; r++) {
-				arguments = new String[]{M};
-				serialCounterResults += SerialCounter.main(arguments)/runs;
-			}
-			printHelper.prettyPrint("Serial Counter Result:", serialCounterResults );
-
-			for (int r = 0; r < runs; r++) {
+			for (int r = 0; r < uniform_runs; r++)
+			{
 				int i = 0;
-				for (String lock : lockInputsArgs) {
-					arguments = new String[]{M, "1", lock, "1"};
-					parallelCounterResults[i] += Long.valueOf(ParallelCounter.main(arguments))/runs; 
-					i++;
+				int j = 0;
+				int k = 0;
+				for (String lock : lockInputsArgs)
+				{
+					for(String S : pickingQueueAlg)
+					{
+						for(String W : meanInputsArgs)
+						{
+							arguments = new String[]{M, "1", W, "true","4","8",lock,S}; //M,n,W,Uniform flag,experimentNum,queue depth,lockType,S
+							parallelPacketResults[k][j][i] += ParallelPacket.main(arguments); 
+							i++;
+						}
+						j++;
+					}
+					k++;
 				}
 			}
 			printHelper.csvPrinter("Packet (Test #1)", parallelCounterResults);

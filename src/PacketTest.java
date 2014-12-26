@@ -36,7 +36,7 @@ class SerialPacket {
 }
 
 class ParallelPacket {
-  public static void main(String[] args) {
+  public static long main(String[] args) {
 
     final int numMilliseconds = Integer.parseInt(args[0]);    
     final int numSources = Integer.parseInt(args[1]);
@@ -155,5 +155,7 @@ class ParallelPacket {
     System.out.println("count: " + totalCount);
     System.out.println("time: " + timer.getElapsedTime());
     System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+    
+    return totalCount/timer.getElapsedTime();
   }
 }
