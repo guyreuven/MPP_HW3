@@ -1,6 +1,6 @@
 
 class SerialPacket {
-  public static void main(String[] args) {
+  public static long main(String[] args) {
 
     final int numMilliseconds = Integer.parseInt(args[0]);    
     final int numSources = Integer.parseInt(args[1]);
@@ -29,9 +29,15 @@ class SerialPacket {
     } catch (InterruptedException ignore) {;}      
     timer.stopTimer();
     final long totalCount = workerData.totalPackets;
-    System.out.println("count: " + totalCount);
-    System.out.println("time: " + timer.getElapsedTime());
-    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+//    System.out.println("count: " + totalCount);
+//    System.out.println("time: " + timer.getElapsedTime());
+//    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+    
+    printHelper.prettyPrint("Count", totalCount);
+    printHelper.prettyPrint("Time", timer.getElapsedTime());
+    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " pkts / ms");
+  
+  	return totalCount/timer.getElapsedTime();
   }
 }
 
@@ -151,10 +157,15 @@ class ParallelPacket {
     	totalCount += parallelPacketWorker.numOfPackets;
     }
     
-    System.out.println("count: " + totalCount);
-    System.out.println("time: " + timer.getElapsedTime());
-    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+//    System.out.println("count: " + totalCount);
+//    System.out.println("time: " + timer.getElapsedTime());
+//    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
     
-    return totalCount/timer.getElapsedTime();
+    printHelper.prettyPrint("Count", totalCount);
+    printHelper.prettyPrint("Time", timer.getElapsedTime());
+    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " pkts / ms");
+  
+  	return totalCount/timer.getElapsedTime();
+
   }
 }
