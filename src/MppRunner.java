@@ -8,14 +8,14 @@ public class MppRunner {
         int exponential_runs 	= 11;
         String M				= "2000";	// test running time
         
-        final int runningScenario = 0;
+        final Tests_e runningScenario = Tests_e.COUNTER_IdleLockOverhead;
         
         switch (runningScenario) {
-		case 0:	// Counter test
+		case COUNTER_IdleLockOverhead:	
 			System.out.println("Running Idle Lock Overhead test");
 	        System.out.println("===============================\n");
 	        
-	        String[] numSourcesArgs = new String[]{"1"};	// num of threads
+	        String[] numSourcesArgs = new String[]{"1"};				// num of threads
 	        String[] lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock 
 	        
 	        long serialCounterResults = 0;
@@ -36,6 +36,12 @@ public class MppRunner {
 	            }
 	        }
 	        printHelper.csvPrinter("Parallel Counter (Test #1)", parallelCounterResults);
+	     
+		case COUNTER_LockScaling:	
+			// Optimize the DELAY params
+			String[] arguments = new String[]{M, "32", "1"};
+			long optimizedMinResult = ParallelCounterBackOffLockBenckmark.main(arguments);
+			System.out.println(optimizedMinResult);
 	        
         }
 	}

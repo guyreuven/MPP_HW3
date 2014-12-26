@@ -53,7 +53,7 @@ class Backoff { // helper class for the BackoffLock
 
 class BackoffLock implements Lock {
 	private AtomicBoolean state = new AtomicBoolean(false);
-	private static final int MIN_DELAY = 6193; // You should tune these parameters...
+	private static int MIN_DELAY = 6193; // You should tune these parameters...
 	private static final int MAX_DELAY = 100000000;
 
 	public void lock() {
@@ -89,6 +89,10 @@ class BackoffLock implements Lock {
 
 	public void unlock() {
 		state.set(false);
+	}
+	
+	public void setMinDelay (int delay) {
+		this.MIN_DELAY = delay;
 	}
 }
 
@@ -250,6 +254,7 @@ class LockAllocator {
 		else if( lockType == 1 ) {
 			System.out.println("BackoffLock");
 		}
+		
 		else if( lockType == 4 ) {
 			System.out.println("CLHLock");
 		}
