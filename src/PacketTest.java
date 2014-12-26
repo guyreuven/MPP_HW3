@@ -53,7 +53,7 @@ class ParallelPacket {
     //
     LamportsQueue<Packet>[] lamportQbank = new LamportsQueue[numSources];
     for (int i = 0; i < numSources ; i++ )	{
-    	lamportQbank[i] = new LamportsQueue<Packet>(queueDepth);
+    	lamportQbank[i] = new LamportsQueue<Packet>(queueDepth, lockType);
     }
     
     StopWatch timer = new StopWatch();
