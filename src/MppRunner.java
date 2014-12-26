@@ -77,8 +77,8 @@ public class MppRunner {
 					String result = ParallelCounter.main(arguments);
 					final List<String> items = Arrays.asList(result.split("\\s*,\\s*"));
 
-					parallelCounterDeviationResults[i+r] += Double.valueOf(items.get(0));
-					parallelCounterThroughputResults[i+r] += Long.valueOf(items.get(1));
+					parallelCounterDeviationResults[i+r] = Double.valueOf(items.get(0));
+					parallelCounterThroughputResults[i+r] = Long.valueOf(items.get(1));
 
 					i++;
 				}
