@@ -72,15 +72,15 @@ public class MppRunner {
 			numSourcesArgs = new String[]{"1", "8", "64"};
 			lockInputsArgs = new String[]{"0", "1", "4", "5"};
 			
-			long[][] parallelCounterResults2 = new long[4][3];
+			long[][] parallelCounterResults2 = new long[3][4];
 			
 			for (int r = 0; r < runs; r++)
 			{
 				int i = 0;
-				for (String lock : lockInputsArgs)
+				for(String numSource : numSourcesArgs)
 				{
 					int j = 0;
-					for(String numSource : numSourcesArgs)
+					for (String lock : lockInputsArgs)
 					{
 						System.out.println("Lock: " + lock + "\t\tNumSources: " + numSource);
 						arguments = new String[]{M, numSource, lock, "1"};
@@ -93,7 +93,7 @@ public class MppRunner {
 				}
 			}
 			
-			printHelper.csvPrinter("Parallel Counter Result (Test #2)", parallelCounterResults2);
+			printHelper.csvPrinter("Parallel Counter Result (Test #2)", numSourcesArgs, parallelCounterResults2);
 			
 			break;
 			
