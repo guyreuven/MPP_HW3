@@ -101,6 +101,26 @@ public class printHelper {
 		
 	}
 
+	public static void csvPrinter(String header,
+			long[][] parallelUniformPacketResults_2d) {
+		System.out.format("----------========== Showing results for %s scenario ==========----------%n", header);
+		System.out.println(header + " CSV output: ");
+		StringBuilder sb = new StringBuilder();
+        for (int k = 0; k < parallelUniformPacketResults_2d.length; k++) { //for each L
+        	sb.append("\n");
+            for (int i = 0; i < parallelUniformPacketResults_2d[0].length; i++)
+            {
+                sb.append(parallelUniformPacketResults_2d[k][i] + ",");
+                sb.append("\n");
+            }
+            System.out.println(sb.toString());
+            sb.setLength(0);
+        }
+        
+        System.out.println("----------==========        End of " + header + " CSV output         ==========----------");
+		
+	}
+
 	
 			
 

@@ -1,0 +1,523 @@
+Running PACKET_SpeedupWithUniformLoad test
+==========================================
+
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  772542
+Time                     2000
+Total packets/ms          386  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  739844
+Time                     2000
+Total packets/ms          369  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  710584
+Time                     2001
+Total packets/ms          355  pkts / ms
+Count                  920033
+Time                     2000
+Total packets/ms          460  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 2942304
+Time                     2002
+Total packets/ms         1469  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1234660
+Time                     2001
+Total packets/ms          617  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 1935020
+Time                     2001
+Total packets/ms          967  pkts / ms
+Count                  916552
+Time                     2000
+Total packets/ms          458  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 2404700
+Time                     2004
+Total packets/ms         1199  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 1081800
+Time                     2002
+Total packets/ms          540  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                  905320
+Time                     2001
+Total packets/ms          452  pkts / ms
+Count                  922790
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  811000
+Time                     2000
+Total packets/ms          405  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  710629
+Time                     2001
+Total packets/ms          355  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  801124
+Time                     2000
+Total packets/ms          400  pkts / ms
+Count                  920217
+Time                     2001
+Total packets/ms          459  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 2775436
+Time                     2001
+Total packets/ms         1387  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1163800
+Time                     2001
+Total packets/ms          581  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 1817796
+Time                     2001
+Total packets/ms          908  pkts / ms
+Count                  914772
+Time                     2000
+Total packets/ms          457  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 3270930
+Time                     2001
+Total packets/ms         1634  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 1993520
+Time                     2001
+Total packets/ms          996  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                 1439590
+Time                     2001
+Total packets/ms          719  pkts / ms
+Count                  923000
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  819684
+Time                     2000
+Total packets/ms          409  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  723491
+Time                     2000
+Total packets/ms          361  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  720714
+Time                     2000
+Total packets/ms          360  pkts / ms
+Count                  922112
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 3235216
+Time                     2001
+Total packets/ms         1616  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1146348
+Time                     2000
+Total packets/ms          573  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 2537588
+Time                     2001
+Total packets/ms         1268  pkts / ms
+Count                  922612
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 2917180
+Time                     2003
+Total packets/ms         1456  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 1163240
+Time                     2001
+Total packets/ms          581  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                 1163670
+Time                     2001
+Total packets/ms          581  pkts / ms
+Count                  922600
+Time                     2001
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  807100
+Time                     2000
+Total packets/ms          403  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  743382
+Time                     2001
+Total packets/ms          371  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  739342
+Time                     2001
+Total packets/ms          369  pkts / ms
+Count                  917371
+Time                     2000
+Total packets/ms          458  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 3203952
+Time                     2000
+Total packets/ms         1601  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1188436
+Time                     2001
+Total packets/ms          593  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 2357800
+Time                     2000
+Total packets/ms         1178  pkts / ms
+Count                  917652
+Time                     2001
+Total packets/ms          458  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 2946310
+Time                     2001
+Total packets/ms         1472  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 1826080
+Time                     2001
+Total packets/ms          912  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                  973840
+Time                     2001
+Total packets/ms          486  pkts / ms
+Count                  922200
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  805010
+Time                     2000
+Total packets/ms          402  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  718451
+Time                     2001
+Total packets/ms          359  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  752540
+Time                     2001
+Total packets/ms          376  pkts / ms
+Count                  922280
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 2928056
+Time                     2001
+Total packets/ms         1463  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1126016
+Time                     2000
+Total packets/ms          563  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 2135536
+Time                     2000
+Total packets/ms         1067  pkts / ms
+Count                  922292
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 3165510
+Time                     2001
+Total packets/ms         1581  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 1316350
+Time                     2002
+Total packets/ms          657  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                 1263300
+Time                     2001
+Total packets/ms          631  pkts / ms
+Count                  922510
+Time                     2001
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  811819
+Time                     2001
+Total packets/ms          405  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  715168
+Time                     2001
+Total packets/ms          357  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  728201
+Time                     2000
+Total packets/ms          364  pkts / ms
+Count                  922542
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 2889028
+Time                     2015
+Total packets/ms         1433  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1121076
+Time                     2001
+Total packets/ms          560  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 2441156
+Time                     2000
+Total packets/ms         1220  pkts / ms
+Count                  921824
+Time                     2000
+Total packets/ms          460  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 3047710
+Time                     2001
+Total packets/ms         1523  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 1285290
+Time                     2001
+Total packets/ms          642  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                  773320
+Time                     2002
+Total packets/ms          386  pkts / ms
+Count                  922040
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  815220
+Time                     2000
+Total packets/ms          407  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  732859
+Time                     2001
+Total packets/ms          366  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  748004
+Time                     2001
+Total packets/ms          373  pkts / ms
+Count                  922288
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 2896500
+Time                     2001
+Total packets/ms         1447  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1106384
+Time                     2000
+Total packets/ms          553  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 2220804
+Time                     2001
+Total packets/ms         1109  pkts / ms
+Count                  923000
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 1678920
+Time                     2001
+Total packets/ms          839  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 1360612
+Time                     2001
+Total packets/ms          679  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                 1264220
+Time                     2002
+Total packets/ms          631  pkts / ms
+Count                  922410
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  806266
+Time                     2001
+Total packets/ms          402  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  748775
+Time                     2001
+Total packets/ms          374  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  694461
+Time                     2001
+Total packets/ms          347  pkts / ms
+Count                  921664
+Time                     2000
+Total packets/ms          460  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 2992400
+Time                     2001
+Total packets/ms         1495  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1094200
+Time                     2001
+Total packets/ms          546  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 2448364
+Time                     2000
+Total packets/ms         1224  pkts / ms
+Count                  923180
+Time                     2001
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 2701560
+Time                     2001
+Total packets/ms         1350  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 2203530
+Time                     2000
+Total packets/ms         1101  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                 1586460
+Time                     2001
+Total packets/ms          792  pkts / ms
+Count                  921580
+Time                     2000
+Total packets/ms          460  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  804869
+Time                     2001
+Total packets/ms          402  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  766390
+Time                     2000
+Total packets/ms          383  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  735079
+Time                     2001
+Total packets/ms          367  pkts / ms
+Count                  921046
+Time                     2001
+Total packets/ms          460  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 3135992
+Time                     2001
+Total packets/ms         1567  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1163156
+Time                     2001
+Total packets/ms          581  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 2296564
+Time                     2001
+Total packets/ms         1147  pkts / ms
+Count                  921552
+Time                     2000
+Total packets/ms          460  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 2622610
+Time                     2001
+Total packets/ms         1310  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 1934330
+Time                     2001
+Total packets/ms          966  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                 1377410
+Time                     2001
+Total packets/ms          688  pkts / ms
+Count                  922460
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  795335
+Time                     2000
+Total packets/ms          397  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  696599
+Time                     2001
+Total packets/ms          348  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  741051
+Time                     2001
+Total packets/ms          370  pkts / ms
+Count                  920089
+Time                     2000
+Total packets/ms          460  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 3091964
+Time                     2001
+Total packets/ms         1545  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1241608
+Time                     2001
+Total packets/ms          620  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 2001204
+Time                     2001
+Total packets/ms         1000  pkts / ms
+Count                  917016
+Time                     2000
+Total packets/ms          458  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 2519130
+Time                     2001
+Total packets/ms         1258  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 1821350
+Time                     2001
+Total packets/ms          910  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                  985950
+Time                     2001
+Total packets/ms          492  pkts / ms
+Count                  922610
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 1
+Count                  809743
+Time                     2001
+Total packets/ms          404  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 1
+Count                  740618
+Time                     2000
+Total packets/ms          370  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 1
+Count                  733928
+Time                     2001
+Total packets/ms          366  pkts / ms
+Count                  922370
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 4
+Count                 2944640
+Time                     2000
+Total packets/ms         1472  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 4
+Count                 1159848
+Time                     2001
+Total packets/ms          579  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 4
+Count                 1948540
+Time                     2001
+Total packets/ms          973  pkts / ms
+Count                  923004
+Time                     2000
+Total packets/ms          461  pkts / ms
+Lock: 0		Strategy: 0	Mean: 1000	NumSources: 10
+Count                 2369570
+Time                     2001
+Total packets/ms         1184  pkts / ms
+Lock: 0		Strategy: 2	Mean: 1000	NumSources: 10
+Count                 1373100
+Time                     2000
+Total packets/ms          686  pkts / ms
+Lock: 0		Strategy: 3	Mean: 1000	NumSources: 10
+Count                 1338580
+Time                     2004
+Total packets/ms          667  pkts / ms
+Count                  922810
+Time                     2000
+Total packets/ms          461  pkts / ms
+----------========== Showing results for Serial Uniform Packet Results (Test #6): Mean = 1000 scenario ==========----------
+Serial Uniform Packet Results (Test #6): Mean = 1000 CSV output: 
+451,
+451,
+451,
+----------==========        End of Serial Uniform Packet Results (Test #6): Mean = 1000 CSV output         ==========----------
+----------========== Showing results for Parallel Uniform Packet Results (Test #6): Mean = 1000, lock = 0 scenario ==========----------
+Parallel Uniform Packet Results (Test #6): Mean = 1000, lock = 0 CSV output: 
+
+397,
+359,
+363,
+
+
+1494,
+573,
+1091,
+
+
+1341,
+782,
+589,
+
+----------==========        End of Parallel Uniform Packet Results (Test #6): Mean = 1000, lock = 0 CSV output         ==========----------
+Multicore execution finished.
