@@ -22,7 +22,7 @@ public class MppRunner {
 		String[] pickingQueueAlg = null;
 		String[] meanInputsArgs  = null;
 
-		final Tests_e runningScenario = Tests_e.COUNTER_LockScaling;
+		final Tests_e runningScenario = Tests_e.COUNTER_Fairness;
 
 		switch (runningScenario) {
 		case COUNTER_IdleLockOverhead:	
