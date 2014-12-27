@@ -1,6 +1,7 @@
 
 public enum Tests_e {
 	COUNTER_IdleLockOverhead,
+	COUNTER_LockScaling_BackoffOptimization,
 	COUNTER_LockScaling,
 	COUNTER_Fairness,
 	PACKET_IdleLockOverhead,

@@ -7,29 +7,36 @@ import java.util.List;
 public class MppRunner {
 
 	public static void main(String[] args) {
+		
+		// instantiate and initialize general arguments:
 		int runs 				= 4;
 		int uniform_runs 		= 5;
 		int exponential_runs 	= 11;
 		String M				= "2000";	// test running time
+		
+		String[] numSourcesArgs 		= null;
+		String[] lockInputsArgs 		= null;
+		String[] arguments 				= null;
+		
 
 		String[] pickingQueueAlg = null;
 		String[] meanInputsArgs  = null;
 
-		final Tests_e runningScenario = Tests_e.COUNTER_Fairness;
+		final Tests_e runningScenario = Tests_e.COUNTER_LockScaling;
 
 		switch (runningScenario) {
 		case COUNTER_IdleLockOverhead:	
 			System.out.println("Running Idle Lock Overhead test");
 			System.out.println("===============================\n");
 
-			String[] numSourcesArgs = new String[]{"1"};				// num of threads
-			String[] lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock 
+			numSourcesArgs = new String[]{"1"};				// num of threads
+			lockInputsArgs = new String[]{"0", "1", "4", "5"};	// choosing a lock 
 
 			long serialCounterResults = 0;
 			long[] parallelCounterResults = new long[4];
 
 			for (int r = 0; r < runs; r++) {
-				String[] arguments = new String[]{M};
+				arguments = new String[]{M};
 				serialCounterResults += SerialCounter.main(arguments)/runs;
 			}
 			printHelper.prettyPrint("Serial Counter Result (Test #1):", serialCounterResults );
@@ -37,7 +44,7 @@ public class MppRunner {
 			for (int r = 0; r < runs; r++) {
 				int i = 0;
 				for (String lock : lockInputsArgs) {
-					String[] arguments = new String[]{M, "1", lock, "1"};
+					arguments = new String[]{M, "1", lock, "1"};
 					parallelCounterResults[i] += Long.valueOf(ParallelCounter.main(arguments))/runs; 
 					i++;
 				}
@@ -45,17 +52,48 @@ public class MppRunner {
 			printHelper.csvPrinter("Parallel Counter Result (Test #1)", parallelCounterResults);
 
 			break;
-		case COUNTER_LockScaling:	
+			
+		case COUNTER_LockScaling_BackoffOptimization:	
 			// Optimize the DELAY params
 
 			System.out.println("Running Backoff Lock optimization test");
 			System.out.println("======================================\n");
-			String[] arguments = new String[]{M, "32", "1"};
+			arguments = new String[]{M, "32", "1"};
 			long optimizedMinResult = ParallelCounterBackOffLockBenckmark.main(arguments);
 			System.out.println(optimizedMinResult);
-
-			// After DELAY params were optimized, starting to run the test
 			
+			break;
+			
+		case COUNTER_LockScaling:	
+			
+			System.out.println("Running Lock Scaling test");
+			System.out.println("=========================\n");
+			
+			numSourcesArgs = new String[]{"1", "8", "64"};
+			lockInputsArgs = new String[]{"0", "1", "4", "5"};
+			
+			long[][] parallelCounterResults2 = new long[4][3];
+			
+			for (int r = 0; r < runs; r++)
+			{
+				int i = 0;
+				for (String lock : lockInputsArgs)
+				{
+					int j = 0;
+					for(String numSource : numSourcesArgs)
+					{
+						System.out.println("Lock: " + lock + "\t\tNumSources: " + numSource);
+						arguments = new String[]{M, numSource, lock, "1"};
+						parallelCounterResults2[i][j] += Long.parseLong(ParallelCounter.main(arguments))/runs;
+						
+						j++;
+					}
+					
+					i++;
+				}
+			}
+			
+			printHelper.csvPrinter("Parallel Counter Result (Test #2)", parallelCounterResults2);
 			
 			break;
 			
