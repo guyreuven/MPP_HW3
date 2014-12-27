@@ -195,6 +195,7 @@ class MCSLock implements Lock {
 	@Override
 	public void unlock()
 	{
+		
 		QNode qNode = MyNode.get();
 		  if(qNode.next == null)
 		  {
