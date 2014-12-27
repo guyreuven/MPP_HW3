@@ -15,7 +15,7 @@ public class MppRunner {
 		String[] pickingQueueAlg = null;
 		String[] meanInputsArgs  = null;
 
-		final Tests_e runningScenario = Tests_e.PACKET_IdleLockOverhead;
+		final Tests_e runningScenario = Tests_e.COUNTER_Fairness;
 
 		switch (runningScenario) {
 		case COUNTER_IdleLockOverhead:	
@@ -32,7 +32,7 @@ public class MppRunner {
 				String[] arguments = new String[]{M};
 				serialCounterResults += SerialCounter.main(arguments)/runs;
 			}
-			printHelper.prettyPrint("Serial Counter Result:", serialCounterResults );
+			printHelper.prettyPrint("Serial Counter Result (Test #1):", serialCounterResults );
 
 			for (int r = 0; r < runs; r++) {
 				int i = 0;
@@ -42,7 +42,7 @@ public class MppRunner {
 					i++;
 				}
 			}
-			printHelper.csvPrinter("Parallel Counter (Test #1)", parallelCounterResults);
+			printHelper.csvPrinter("Parallel Counter Result (Test #1)", parallelCounterResults);
 
 			break;
 		case COUNTER_LockScaling:	
@@ -54,9 +54,11 @@ public class MppRunner {
 			long optimizedMinResult = ParallelCounterBackOffLockBenckmark.main(arguments);
 			System.out.println(optimizedMinResult);
 
-
-
+			// After DELAY params were optimized, starting to run the test
+			
+			
 			break;
+			
 		case COUNTER_Fairness:
 
 			System.out.println("Running Fairness test");
@@ -70,22 +72,22 @@ public class MppRunner {
 			double[] parallelCounterDeviationResults = new double[4*runs];
 
 			// we don't normalize scatter graph on the num of runs
-			for (int r = 0; r < runs; r++) {
-				int i = 0;
-				for (String lock : lockInputsArgs) {
+			int i = 0;
+			for (String lock : lockInputsArgs) {
+				for (int r = 0; r < runs; r++) {
 					arguments = new String[]{M, "32", lock, "3"};
 					String result = ParallelCounter.main(arguments);
 					final List<String> items = Arrays.asList(result.split("\\s*,\\s*"));
 
-					parallelCounterDeviationResults[i+r] = Double.valueOf(items.get(0));
-					parallelCounterThroughputResults[i+r] = Long.valueOf(items.get(1));
-
-					i++;
+					parallelCounterDeviationResults[(i*runs)+r] = Double.valueOf(items.get(0));
+					parallelCounterThroughputResults[(i*runs)+r] = Long.valueOf(items.get(1));
+					
 				}
+				i++;
 			}
 			printHelper.csvPrinter("Parallel Counter Fairness (Test #3)", parallelCounterThroughputResults, parallelCounterDeviationResults);
-
 			break;
+			
 		case PACKET_IdleLockOverhead:
 			System.out.println("Running PACKET_IdleLockOverhead test");
 			System.out.println("====================================\n");
@@ -99,7 +101,7 @@ public class MppRunner {
 
 			for (int r = 0; r < uniform_runs; r++)
 			{
-				int i = 0;
+				i = 0;
 				int j = 0;
 				int k = 0;
 				for (String lock : lockInputsArgs)

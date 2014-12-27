@@ -196,17 +196,19 @@ class MCSLock implements Lock {
 	public void unlock()
 	{
 		QNode qNode = MyNode.get();
-		state.set(false);
-		if(qNode.next == null)
-		{
-			if(tail.compareAndSet(qNode, null))
-				return;
+		  if(qNode.next == null)
+		  {
+		   if(tail.compareAndSet(qNode, null))
+		   {
+		    state.set(false);
+		    return;
+		   }
+		   while(qNode.next == null) {}
+		  }
 
-			while(qNode.next == null) {}
-		}
-
-		qNode.next.locked = false;
-		qNode.next = null;
+		  qNode.next.locked = false;
+		  qNode.next = null;
+		  state.set(false);
 	}
 
 	public boolean tryLock() {
