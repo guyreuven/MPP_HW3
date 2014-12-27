@@ -241,8 +241,9 @@ public class MppRunner {
 			for (int r = 0; r < uniform_runs; r++) {
 				int j = 0;
 				for (String numSources : numSourcesArgs) {
-					arguments = new String[]{M, numSources, "1000", "true", "4"};
+					arguments = new String[]{M, numSources, "1600", "true", "4"};
 					serialUniformPacketResults[j] += SerialPacket.main(arguments)/uniform_runs;
+					j++;
 				}
 			}
 			
@@ -282,6 +283,7 @@ public class MppRunner {
 				for (String numSources : numSourcesArgs) {
 					arguments = new String[]{M, numSources, "1000", "false", "4"};
 					serialUniformPacketResults[j] += SerialPacket.main(arguments)/exponential_runs;
+					j++;
 				}
 			}
 			
@@ -320,6 +322,7 @@ public class MppRunner {
 				for (String numSources : numSourcesArgs) {
 					arguments = new String[]{M, numSources, "1000", "false", "4"};
 					serialUniformPacketResults[j] += SerialPacket.main(arguments)/exponential_runs;
+					j++;
 				}
 			}
 			
@@ -358,6 +361,7 @@ public class MppRunner {
 				for (String numSources : numSourcesArgs) {
 					arguments = new String[]{M, numSources, "1600", "false", "4"};
 					serialUniformPacketResults[j] += SerialPacket.main(arguments)/exponential_runs;
+					j++;
 				}
 			}
 			
@@ -396,6 +400,7 @@ public class MppRunner {
 				for (String numSources : numSourcesArgs) {
 					arguments = new String[]{M, numSources, "1600", "false", "4"};
 					serialUniformPacketResults[j] += SerialPacket.main(arguments)/exponential_runs;
+					j++;
 				}
 			}
 			
