@@ -101,8 +101,7 @@ public class printHelper {
 		
 	}
 
-	public static void csvPrinter(String header,
-			long[][] parallelUniformPacketResults_2d) {
+	public static void csvPrinter(String header, long[][] parallelUniformPacketResults_2d) {
 		System.out.format("----------========== Showing results for %s scenario ==========----------%n", header);
 		System.out.println(header + " CSV output: ");
 		StringBuilder sb = new StringBuilder();

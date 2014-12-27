@@ -1,624 +1,504 @@
 Running PACKET_IdleLockOverhead test
-===============================
+====================================
 
 Lock: 0  S: 0  W: 25
-TASLock
-count: 2499521
-time: 2001
-1249 pkts / ms
+Count                 3092302
+Time                     2001
+Total packets/ms         1545  pkts / ms
 Lock: 0  S: 0  W: 200
-TASLock
-count: 2530864
-time: 2001
-1264 pkts / ms
+Count                 2242891
+Time                     2001
+Total packets/ms         1120  pkts / ms
 Lock: 0  S: 0  W: 800
-TASLock
-count: 965520
-time: 2000
-482 pkts / ms
+Count                 1002249
+Time                     2001
+Total packets/ms          500  pkts / ms
 Lock: 0  S: 1  W: 25
-TASLock
-count: 2349302
-time: 2004
-1172 pkts / ms
+Count                 2832302
+Time                     2001
+Total packets/ms         1415  pkts / ms
 Lock: 0  S: 1  W: 200
-TASLock
-count: 1921846
-time: 2001
-960 pkts / ms
+Count                 1570123
+Time                     2000
+Total packets/ms          785  pkts / ms
 Lock: 0  S: 1  W: 800
-TASLock
-count: 932694
-time: 2001
-466 pkts / ms
+Count                  895424
+Time                     2001
+Total packets/ms          447  pkts / ms
 Lock: 1  S: 0  W: 25
-BackoffLock
-count: 3153067
-time: 2000
-1576 pkts / ms
+Count                 3335387
+Time                     2001
+Total packets/ms         1666  pkts / ms
 Lock: 1  S: 0  W: 200
-BackoffLock
-count: 3001876
-time: 2001
-1500 pkts / ms
+Count                 2295389
+Time                     2001
+Total packets/ms         1147  pkts / ms
 Lock: 1  S: 0  W: 800
-BackoffLock
-count: 927544
-time: 2001
-463 pkts / ms
+Count                 1009699
+Time                     2001
+Total packets/ms          504  pkts / ms
 Lock: 1  S: 1  W: 25
-BackoffLock
-count: 3275431
-time: 2000
-1637 pkts / ms
+Count                 2138245
+Time                     2001
+Total packets/ms         1068  pkts / ms
 Lock: 1  S: 1  W: 200
-BackoffLock
-count: 2100214
-time: 2000
-1050 pkts / ms
+Count                 1632037
+Time                     2001
+Total packets/ms          815  pkts / ms
 Lock: 1  S: 1  W: 800
-BackoffLock
-count: 884141
-time: 2001
-441 pkts / ms
+Count                  962716
+Time                     2007
+Total packets/ms          479  pkts / ms
 Lock: 4  S: 0  W: 25
-CLHLock
-count: 2854856
-time: 2001
-1426 pkts / ms
+Count                 2381171
+Time                     2000
+Total packets/ms         1190  pkts / ms
 Lock: 4  S: 0  W: 200
-CLHLock
-count: 2890222
-time: 2001
-1444 pkts / ms
+Count                 3081399
+Time                     2000
+Total packets/ms         1540  pkts / ms
 Lock: 4  S: 0  W: 800
-CLHLock
-count: 1014066
-time: 2000
-507 pkts / ms
+Count                  952024
+Time                     2001
+Total packets/ms          475  pkts / ms
 Lock: 4  S: 1  W: 25
-CLHLock
-count: 2528265
-time: 2000
-1264 pkts / ms
+Count                 2537635
+Time                     2000
+Total packets/ms         1268  pkts / ms
 Lock: 4  S: 1  W: 200
-CLHLock
-count: 1174978
-time: 2000
-587 pkts / ms
+Count                 1379522
+Time                     2001
+Total packets/ms          689  pkts / ms
 Lock: 4  S: 1  W: 800
-CLHLock
-count: 795435
-time: 2000
-397 pkts / ms
+Count                  741422
+Time                     2001
+Total packets/ms          370  pkts / ms
 Lock: 5  S: 0  W: 25
-MCSLock
-count: 3315631
-time: 2001
-1656 pkts / ms
+Count                 2630598
+Time                     2001
+Total packets/ms         1314  pkts / ms
 Lock: 5  S: 0  W: 200
-MCSLock
-count: 2825885
-time: 2001
-1412 pkts / ms
+Count                 2801288
+Time                     2001
+Total packets/ms         1399  pkts / ms
 Lock: 5  S: 0  W: 800
-MCSLock
-count: 999070
-time: 2001
-499 pkts / ms
+Count                  941907
+Time                     2000
+Total packets/ms          470  pkts / ms
 Lock: 5  S: 1  W: 25
-MCSLock
-count: 2209363
-time: 2001
-1104 pkts / ms
+Count                 2122783
+Time                     2002
+Total packets/ms         1060  pkts / ms
 Lock: 5  S: 1  W: 200
-MCSLock
-count: 1766449
-time: 2000
-883 pkts / ms
+Count                 1423718
+Time                     2000
+Total packets/ms          711  pkts / ms
 Lock: 5  S: 1  W: 800
-MCSLock
-count: 795069
-time: 2000
-397 pkts / ms
+Count                  772819
+Time                     2001
+Total packets/ms          386  pkts / ms
 Lock: 0  S: 0  W: 25
-TASLock
-count: 2890915
-time: 2000
-1445 pkts / ms
+Count                 1740047
+Time                     2001
+Total packets/ms          869  pkts / ms
 Lock: 0  S: 0  W: 200
-TASLock
-count: 2868140
-time: 2000
-1434 pkts / ms
+Count                 2773304
+Time                     2001
+Total packets/ms         1385  pkts / ms
 Lock: 0  S: 0  W: 800
-TASLock
-count: 1006480
-time: 2000
-503 pkts / ms
+Count                  952518
+Time                     2001
+Total packets/ms          476  pkts / ms
 Lock: 0  S: 1  W: 25
-TASLock
-count: 2295480
-time: 2000
-1147 pkts / ms
+Count                 2083592
+Time                     2001
+Total packets/ms         1041  pkts / ms
 Lock: 0  S: 1  W: 200
-TASLock
-count: 1929895
-time: 2000
-964 pkts / ms
+Count                 1601092
+Time                     2000
+Total packets/ms          800  pkts / ms
 Lock: 0  S: 1  W: 800
-TASLock
-count: 879922
-time: 2001
-439 pkts / ms
+Count                  799111
+Time                     2001
+Total packets/ms          399  pkts / ms
 Lock: 1  S: 0  W: 25
-BackoffLock
-count: 2479500
-time: 2001
-1239 pkts / ms
+Count                 2420192
+Time                     2001
+Total packets/ms         1209  pkts / ms
 Lock: 1  S: 0  W: 200
-BackoffLock
-count: 3019776
-time: 2001
-1509 pkts / ms
+Count                 2758034
+Time                     2000
+Total packets/ms         1379  pkts / ms
 Lock: 1  S: 0  W: 800
-BackoffLock
-count: 981262
-time: 2000
-490 pkts / ms
+Count                  933935
+Time                     2001
+Total packets/ms          466  pkts / ms
 Lock: 1  S: 1  W: 25
-BackoffLock
-count: 1751968
-time: 2000
-875 pkts / ms
+Count                 3013625
+Time                     2001
+Total packets/ms         1506  pkts / ms
 Lock: 1  S: 1  W: 200
-BackoffLock
-count: 2233029
-time: 2000
-1116 pkts / ms
+Count                 1986577
+Time                     2000
+Total packets/ms          993  pkts / ms
 Lock: 1  S: 1  W: 800
-BackoffLock
-count: 852861
-time: 2000
-426 pkts / ms
+Count                  895507
+Time                     2001
+Total packets/ms          447  pkts / ms
 Lock: 4  S: 0  W: 25
-CLHLock
-count: 1624927
-time: 2001
-812 pkts / ms
+Count                 2924860
+Time                     2001
+Total packets/ms         1461  pkts / ms
 Lock: 4  S: 0  W: 200
-CLHLock
-count: 3040055
-time: 2001
-1519 pkts / ms
+Count                 2672013
+Time                     2001
+Total packets/ms         1335  pkts / ms
 Lock: 4  S: 0  W: 800
-CLHLock
-count: 973098
-time: 2001
-486 pkts / ms
+Count                  953500
+Time                     2005
+Total packets/ms          475  pkts / ms
 Lock: 4  S: 1  W: 25
-CLHLock
-count: 2055147
-time: 2001
-1027 pkts / ms
+Count                 2045053
+Time                     2001
+Total packets/ms         1022  pkts / ms
 Lock: 4  S: 1  W: 200
-CLHLock
-count: 1507279
-time: 2001
-753 pkts / ms
+Count                 1635861
+Time                     2001
+Total packets/ms          817  pkts / ms
 Lock: 4  S: 1  W: 800
-CLHLock
-count: 742453
-time: 2000
-371 pkts / ms
+Count                  732003
+Time                     2000
+Total packets/ms          366  pkts / ms
 Lock: 5  S: 0  W: 25
-MCSLock
-count: 2926849
-time: 2001
-1462 pkts / ms
+Count                 1787010
+Time                     2001
+Total packets/ms          893  pkts / ms
 Lock: 5  S: 0  W: 200
-MCSLock
-count: 2268299
-time: 2001
-1133 pkts / ms
+Count                 2926935
+Time                     2000
+Total packets/ms         1463  pkts / ms
 Lock: 5  S: 0  W: 800
-MCSLock
-count: 967331
-time: 2001
-483 pkts / ms
+Count                  981590
+Time                     2001
+Total packets/ms          490  pkts / ms
 Lock: 5  S: 1  W: 25
-MCSLock
-count: 2319698
-time: 2001
-1159 pkts / ms
+Count                 2309946
+Time                     2001
+Total packets/ms         1154  pkts / ms
 Lock: 5  S: 1  W: 200
-MCSLock
-count: 1478514
-time: 2001
-738 pkts / ms
+Count                 1913966
+Time                     2000
+Total packets/ms          956  pkts / ms
 Lock: 5  S: 1  W: 800
-MCSLock
-count: 722403
-time: 2001
-361 pkts / ms
+Count                  788280
+Time                     2001
+Total packets/ms          393  pkts / ms
 Lock: 0  S: 0  W: 25
-TASLock
-count: 2264437
-time: 2001
-1131 pkts / ms
+Count                 2324191
+Time                     2000
+Total packets/ms         1162  pkts / ms
 Lock: 0  S: 0  W: 200
-TASLock
-count: 2563145
-time: 2000
-1281 pkts / ms
+Count                 3067867
+Time                     2001
+Total packets/ms         1533  pkts / ms
 Lock: 0  S: 0  W: 800
-TASLock
-count: 978262
-time: 2000
-489 pkts / ms
+Count                  999919
+Time                     2000
+Total packets/ms          499  pkts / ms
 Lock: 0  S: 1  W: 25
-TASLock
-count: 2328786
-time: 2001
-1163 pkts / ms
+Count                 2325665
+Time                     2000
+Total packets/ms         1162  pkts / ms
 Lock: 0  S: 1  W: 200
-TASLock
-count: 2235998
-time: 2001
-1117 pkts / ms
+Count                 2306353
+Time                     2001
+Total packets/ms         1152  pkts / ms
 Lock: 0  S: 1  W: 800
-TASLock
-count: 934139
-time: 2001
-466 pkts / ms
+Count                  923056
+Time                     2000
+Total packets/ms          461  pkts / ms
 Lock: 1  S: 0  W: 25
-BackoffLock
-count: 2942228
-time: 2000
-1471 pkts / ms
+Count                 3085491
+Time                     2001
+Total packets/ms         1541  pkts / ms
 Lock: 1  S: 0  W: 200
-BackoffLock
-count: 2930308
-time: 2000
-1465 pkts / ms
+Count                 2784893
+Time                     2001
+Total packets/ms         1391  pkts / ms
 Lock: 1  S: 0  W: 800
-BackoffLock
-count: 994077
-time: 2001
-496 pkts / ms
+Count                 1002575
+Time                     2000
+Total packets/ms          501  pkts / ms
 Lock: 1  S: 1  W: 25
-BackoffLock
-count: 1860419
-time: 2000
-930 pkts / ms
+Count                 1879289
+Time                     2001
+Total packets/ms          939  pkts / ms
 Lock: 1  S: 1  W: 200
-BackoffLock
-count: 2345640
-time: 2000
-1172 pkts / ms
+Count                 2067549
+Time                     2000
+Total packets/ms         1033  pkts / ms
 Lock: 1  S: 1  W: 800
-BackoffLock
-count: 938944
-time: 2001
-469 pkts / ms
+Count                  910561
+Time                     2001
+Total packets/ms          455  pkts / ms
 Lock: 4  S: 0  W: 25
-CLHLock
-count: 2682926
-time: 2001
-1340 pkts / ms
+Count                 2313971
+Time                     2000
+Total packets/ms         1156  pkts / ms
 Lock: 4  S: 0  W: 200
-CLHLock
-count: 2686207
-time: 2001
-1342 pkts / ms
+Count                 2705496
+Time                     2001
+Total packets/ms         1352  pkts / ms
 Lock: 4  S: 0  W: 800
-CLHLock
-count: 956584
-time: 2001
-478 pkts / ms
+Count                  975801
+Time                     2000
+Total packets/ms          487  pkts / ms
 Lock: 4  S: 1  W: 25
-CLHLock
-count: 1793996
-time: 2000
-896 pkts / ms
+Count                 2313832
+Time                     2001
+Total packets/ms         1156  pkts / ms
 Lock: 4  S: 1  W: 200
-CLHLock
-count: 1572102
-time: 2000
-786 pkts / ms
+Count                 1392586
+Time                     2000
+Total packets/ms          696  pkts / ms
 Lock: 4  S: 1  W: 800
-CLHLock
-count: 709070
-time: 2001
-354 pkts / ms
+Count                  723386
+Time                     2001
+Total packets/ms          361  pkts / ms
 Lock: 5  S: 0  W: 25
-MCSLock
-count: 1733687
-time: 2000
-866 pkts / ms
+Count                 2050925
+Time                     2001
+Total packets/ms         1024  pkts / ms
 Lock: 5  S: 0  W: 200
-MCSLock
-count: 2728195
-time: 2000
-1364 pkts / ms
+Count                 2468374
+Time                     2000
+Total packets/ms         1234  pkts / ms
 Lock: 5  S: 0  W: 800
-MCSLock
-count: 972519
-time: 2001
-486 pkts / ms
+Count                  968420
+Time                     2001
+Total packets/ms          483  pkts / ms
 Lock: 5  S: 1  W: 25
-MCSLock
-count: 2489478
-time: 2001
-1244 pkts / ms
+Count                 2115800
+Time                     2000
+Total packets/ms         1057  pkts / ms
 Lock: 5  S: 1  W: 200
-MCSLock
-count: 1579382
-time: 2000
-789 pkts / ms
+Count                 1495769
+Time                     2001
+Total packets/ms          747  pkts / ms
 Lock: 5  S: 1  W: 800
-MCSLock
-count: 746544
-time: 2000
-373 pkts / ms
+Count                  814308
+Time                     2001
+Total packets/ms          406  pkts / ms
 Lock: 0  S: 0  W: 25
-TASLock
-count: 2370315
-time: 2000
-1185 pkts / ms
+Count                 3023852
+Time                     2000
+Total packets/ms         1511  pkts / ms
 Lock: 0  S: 0  W: 200
-TASLock
-count: 2737380
-time: 2000
-1368 pkts / ms
+Count                 2812064
+Time                     2009
+Total packets/ms         1399  pkts / ms
 Lock: 0  S: 0  W: 800
-TASLock
-count: 937437
-time: 2000
-468 pkts / ms
+Count                 1000334
+Time                     2001
+Total packets/ms          499  pkts / ms
 Lock: 0  S: 1  W: 25
-TASLock
-count: 2058916
-time: 2000
-1029 pkts / ms
+Count                 2299481
+Time                     2000
+Total packets/ms         1149  pkts / ms
 Lock: 0  S: 1  W: 200
-TASLock
-count: 1851479
-time: 2000
-925 pkts / ms
+Count                 1899856
+Time                     2001
+Total packets/ms          949  pkts / ms
 Lock: 0  S: 1  W: 800
-TASLock
-count: 881095
-time: 2000
-440 pkts / ms
+Count                  924519
+Time                     2001
+Total packets/ms          462  pkts / ms
 Lock: 1  S: 0  W: 25
-BackoffLock
-count: 2399945
-time: 2000
-1199 pkts / ms
+Count                 2998127
+Time                     2000
+Total packets/ms         1499  pkts / ms
 Lock: 1  S: 0  W: 200
-BackoffLock
-count: 2699433
-time: 2000
-1349 pkts / ms
+Count                 2831490
+Time                     2001
+Total packets/ms         1415  pkts / ms
 Lock: 1  S: 0  W: 800
-BackoffLock
-count: 971317
-time: 2000
-485 pkts / ms
+Count                  944622
+Time                     2001
+Total packets/ms          472  pkts / ms
 Lock: 1  S: 1  W: 25
-BackoffLock
-count: 2407456
-time: 2000
-1203 pkts / ms
+Count                 2359945
+Time                     2001
+Total packets/ms         1179  pkts / ms
 Lock: 1  S: 1  W: 200
-BackoffLock
-count: 1626758
-time: 2001
-812 pkts / ms
+Count                 2629119
+Time                     2001
+Total packets/ms         1313  pkts / ms
 Lock: 1  S: 1  W: 800
-BackoffLock
-count: 918167
-time: 2001
-458 pkts / ms
+Count                  844991
+Time                     2000
+Total packets/ms          422  pkts / ms
 Lock: 4  S: 0  W: 25
-CLHLock
-count: 2562638
-time: 2000
-1281 pkts / ms
+Count                 2053842
+Time                     2000
+Total packets/ms         1026  pkts / ms
 Lock: 4  S: 0  W: 200
-CLHLock
-count: 2630878
-time: 2000
-1315 pkts / ms
+Count                 2650395
+Time                     2001
+Total packets/ms         1324  pkts / ms
 Lock: 4  S: 0  W: 800
-CLHLock
-count: 977293
-time: 2000
-488 pkts / ms
+Count                  936133
+Time                     2000
+Total packets/ms          468  pkts / ms
 Lock: 4  S: 1  W: 25
-CLHLock
-count: 2088755
-time: 2000
-1044 pkts / ms
+Count                 2425268
+Time                     2001
+Total packets/ms         1212  pkts / ms
 Lock: 4  S: 1  W: 200
-CLHLock
-count: 1421008
-time: 2000
-710 pkts / ms
+Count                 1480605
+Time                     2000
+Total packets/ms          740  pkts / ms
 Lock: 4  S: 1  W: 800
-CLHLock
-count: 728499
-time: 2000
-364 pkts / ms
+Count                  715435
+Time                     2001
+Total packets/ms          357  pkts / ms
 Lock: 5  S: 0  W: 25
-MCSLock
-count: 2407870
-time: 2000
-1203 pkts / ms
+Count                 2278588
+Time                     2000
+Total packets/ms         1139  pkts / ms
 Lock: 5  S: 0  W: 200
-MCSLock
-count: 2635511
-time: 2000
-1317 pkts / ms
+Count                 2758789
+Time                     2001
+Total packets/ms         1378  pkts / ms
 Lock: 5  S: 0  W: 800
-MCSLock
-count: 970617
-time: 2001
-485 pkts / ms
+Count                  960652
+Time                     2000
+Total packets/ms          480  pkts / ms
 Lock: 5  S: 1  W: 25
-MCSLock
-count: 1976038
-time: 2001
-987 pkts / ms
+Count                 2428331
+Time                     2001
+Total packets/ms         1213  pkts / ms
 Lock: 5  S: 1  W: 200
-MCSLock
-count: 1390305
-time: 2000
-695 pkts / ms
+Count                 1543146
+Time                     2001
+Total packets/ms          771  pkts / ms
 Lock: 5  S: 1  W: 800
-MCSLock
-count: 745698
-time: 2001
-372 pkts / ms
+Count                  763970
+Time                     2000
+Total packets/ms          381  pkts / ms
 Lock: 0  S: 0  W: 25
-TASLock
-count: 3281351
-time: 2001
-1639 pkts / ms
+Count                 2464919
+Time                     2000
+Total packets/ms         1232  pkts / ms
 Lock: 0  S: 0  W: 200
-TASLock
-count: 2441850
-time: 2001
-1220 pkts / ms
+Count                 2906696
+Time                     2001
+Total packets/ms         1452  pkts / ms
 Lock: 0  S: 0  W: 800
-TASLock
-count: 990199
-time: 2000
-495 pkts / ms
+Count                  981491
+Time                     2001
+Total packets/ms          490  pkts / ms
 Lock: 0  S: 1  W: 25
-TASLock
-count: 2353533
-time: 2001
-1176 pkts / ms
+Count                 2325224
+Time                     2000
+Total packets/ms         1162  pkts / ms
 Lock: 0  S: 1  W: 200
-TASLock
-count: 1841019
-time: 2001
-920 pkts / ms
+Count                 2071578
+Time                     2001
+Total packets/ms         1035  pkts / ms
 Lock: 0  S: 1  W: 800
-TASLock
-count: 980864
-time: 2001
-490 pkts / ms
+Count                  880221
+Time                     2000
+Total packets/ms          440  pkts / ms
 Lock: 1  S: 0  W: 25
-BackoffLock
-count: 2229154
-time: 2000
-1114 pkts / ms
+Count                 2956390
+Time                     2001
+Total packets/ms         1477  pkts / ms
 Lock: 1  S: 0  W: 200
-BackoffLock
-count: 2691716
-time: 2001
-1345 pkts / ms
+Count                 2580523
+Time                     2000
+Total packets/ms         1290  pkts / ms
 Lock: 1  S: 0  W: 800
-BackoffLock
-count: 994966
-time: 2001
-497 pkts / ms
+Count                  981013
+Time                     2001
+Total packets/ms          490  pkts / ms
 Lock: 1  S: 1  W: 25
-BackoffLock
-count: 2261722
-time: 2001
-1130 pkts / ms
+Count                 2305687
+Time                     2000
+Total packets/ms         1152  pkts / ms
 Lock: 1  S: 1  W: 200
-BackoffLock
-count: 1862970
-time: 2000
-931 pkts / ms
+Count                 1671340
+Time                     2001
+Total packets/ms          835  pkts / ms
 Lock: 1  S: 1  W: 800
-BackoffLock
-count: 882786
-time: 2001
-441 pkts / ms
+Count                  877522
+Time                     2000
+Total packets/ms          438  pkts / ms
 Lock: 4  S: 0  W: 25
-CLHLock
-count: 2209775
-time: 2001
-1104 pkts / ms
+Count                 2518386
+Time                     2001
+Total packets/ms         1258  pkts / ms
 Lock: 4  S: 0  W: 200
-CLHLock
-count: 2398664
-time: 2001
-1198 pkts / ms
+Count                 2438797
+Time                     2001
+Total packets/ms         1218  pkts / ms
 Lock: 4  S: 0  W: 800
-CLHLock
-count: 977628
-time: 2001
-488 pkts / ms
+Count                  940140
+Time                     2001
+Total packets/ms          469  pkts / ms
 Lock: 4  S: 1  W: 25
-CLHLock
-count: 2448134
-time: 2001
-1223 pkts / ms
+Count                 1972718
+Time                     2001
+Total packets/ms          985  pkts / ms
 Lock: 4  S: 1  W: 200
-CLHLock
-count: 1274582
-time: 2000
-637 pkts / ms
+Count                 1424363
+Time                     2000
+Total packets/ms          712  pkts / ms
 Lock: 4  S: 1  W: 800
-CLHLock
-count: 679378
-time: 2001
-339 pkts / ms
+Count                  735109
+Time                     2001
+Total packets/ms          367  pkts / ms
 Lock: 5  S: 0  W: 25
-MCSLock
-count: 1971963
-time: 2001
-985 pkts / ms
+Count                 2525276
+Time                     2000
+Total packets/ms         1262  pkts / ms
 Lock: 5  S: 0  W: 200
-MCSLock
-count: 2570413
-time: 2001
-1284 pkts / ms
+Count                 2809154
+Time                     2001
+Total packets/ms         1403  pkts / ms
 Lock: 5  S: 0  W: 800
-MCSLock
-count: 992088
-time: 2001
-495 pkts / ms
+Count                  975042
+Time                     2000
+Total packets/ms          487  pkts / ms
 Lock: 5  S: 1  W: 25
-MCSLock
-count: 2429982
-time: 2001
-1214 pkts / ms
+Count                 1808775
+Time                     2001
+Total packets/ms          903  pkts / ms
 Lock: 5  S: 1  W: 200
-MCSLock
-count: 1386706
-time: 2000
-693 pkts / ms
+Count                 1507164
+Time                     2001
+Total packets/ms          753  pkts / ms
 Lock: 5  S: 1  W: 800
-MCSLock
-count: 769695
-time: 2001
-384 pkts / ms
+Count                  807978
+Time                     2001
+Total packets/ms          403  pkts / ms
 ----------========== Showing results for Packet (Test #1) scenario ==========----------
 Packet (Test #1) CSV output: 
 
-6649,6567,2437,
-5687,4886,2301,
+1262,1376,491,
+1184,943,440,
 
 
-6599,7168,2431,
-5775,5081,2235,
+1476,1323,485,
+1166,996,446,
 
 
-5963,6818,2447,
-5454,3473,1825,
+1217,1352,473,
+1127,729,363,
 
 
-6172,6510,2448,
-5708,3798,1887,
+1123,1372,481,
+1075,786,392,
 
 ----------==========        End of Packet (Test #1) CSV output         ==========----------
-[[[6649, 6567, 2437], [5687, 4886, 2301]], [[6599, 7168, 2431], [5775, 5081, 2235]], [[5963, 6818, 2447], [5454, 3473, 1825]], [[6172, 6510, 2448], [5708, 3798, 1887]]]
+[[[1262, 1376, 491], [1184, 943, 440]], [[1476, 1323, 485], [1166, 996, 446]], [[1217, 1352, 473], [1127, 729, 363]], [[1123, 1372, 481], [1075, 786, 392]]]
 Multicore execution finished.

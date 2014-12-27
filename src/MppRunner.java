@@ -109,7 +109,7 @@ public class MppRunner {
 						for(String W : meanInputsArgs)
 						{
 							System.out.println("Lock: " + lock + "  S: " + S + "  W: " + W);
-							arguments = new String[]{M, "1", W, "true",Integer.toString(2+i*k),"8",lock,S}; //M,n,W,Uniform flag,experimentNum,queue depth,lockType,S
+							arguments = new String[]{M, "1", W, "true","1","8",lock,S}; //M,n,W,Uniform flag,experimentNum,queue depth,lockType,S
 							parallelPacketResults[k][j][i] += ParallelPacket.main(arguments)/uniform_runs; 
 							i++;
 						}
