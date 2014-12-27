@@ -109,13 +109,16 @@ class ParallelPacketWorker implements PacketWorker {
 	}
 
 	public void run() {
-		Packet tmp = null;
-		Random rand = new Random();
+		Packet tmp 			= null;
+		boolean deqSuccess 	= false;
+		Random rand 		= new Random();
 		Integer randSelection = null;
 
 		while( !done.value )	{ // || !(lamportQueue.head == lamportQueue.tail)) {
 
-			LamportsQueue<Packet> lamportQueue = null;
+			LamportsQueue<Packet> lamportQueue 	= null;
+			deqSuccess 							= false;
+			
 			// first, choose and handle the relevant strategy
 			switch (this.strategy) {		// assuming the strategies are: LockFree: 0, HomeQueue: 1, RandomQueue: 2, LastQueue: 3
 
@@ -141,8 +144,8 @@ class ParallelPacketWorker implements PacketWorker {
 
 					//dequeue the next packet from the relevant Lamport queue into tmp
 					tmp = lamportQueue.deq();
+					deqSuccess = true;
 					numOfPackets++;
-					fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed); 
 				} catch (EmptyException e) {
 					if(done.value)
 					{
@@ -150,7 +153,11 @@ class ParallelPacketWorker implements PacketWorker {
 					}
 				} finally	{
 					lamportQueue.lock.unlock();
+					if (deqSuccess)	{
+						fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed);
+					}
 				}
+				
 				break;
 
 			case RandomQueue:	// in this case - The Worker picks a random queue to work on for each dequeue attempt
@@ -161,8 +168,9 @@ class ParallelPacketWorker implements PacketWorker {
 
 					//dequeue the next packet from the relevant Lamport queue into tmp
 					tmp = lamportQueue.deq();
+					deqSuccess = true;
 					numOfPackets++;
-					fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed); 
+//					fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed); 
 				} catch (EmptyException e) {
 					if(done.value)
 					{
@@ -170,6 +178,9 @@ class ParallelPacketWorker implements PacketWorker {
 					}
 				} finally	{
 					lamportQueue.lock.unlock();
+					if (deqSuccess)	{
+						fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed);
+					}
 				}
 
 				break;
@@ -187,6 +198,8 @@ class ParallelPacketWorker implements PacketWorker {
 				}
 
 				while (successFlag)	{	//dequeue the next packet from the relevant Lamport queue into tmp, until queue is empty
+					deqSuccess = false;
+					
 					try 	{
 						if (firstLock)	{
 							firstLock = false;
@@ -195,14 +208,20 @@ class ParallelPacketWorker implements PacketWorker {
 							lamportQueue.lock.lock();
 						}
 						tmp = lamportQueue.deq();
+						deqSuccess = true;
 						numOfPackets++;
-						fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed);
+//						fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed);
 					}	catch (EmptyException e) {
 						break;
 					} finally	{
 						lamportQueue.lock.unlock();
+						if (deqSuccess)	{
+							fingerprint += residue.getFingerprint(tmp.iterations, tmp.seed);
+						}
 					}
+					
 				}
+				
 				break;
 
 			default:
