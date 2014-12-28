@@ -1,0 +1,587 @@
+Running Backoff Lock optimization test
+======================================
+
+Count                 5333662
+Time                     2001
+Total increments/ms       2665   inc / ms
+124.21999049976166
+Count                 5749421
+Time                     2015
+Total increments/ms       2853   inc / ms
+131.50005098190994
+Count                 5694845
+Time                     2004
+Total increments/ms       2841   inc / ms
+80.12445801483211
+Count                 5906366
+Time                     2007
+Total increments/ms       2942   inc / ms
+77.76329441721573
+Delay = 0 result = 2878
+Count                 5863559
+Time                     2001
+Total increments/ms       2930   inc / ms
+98.93139735510093
+Count                 5966304
+Time                     2007
+Total increments/ms       2972   inc / ms
+103.19476909211673
+Count                 6016882
+Time                     2004
+Total increments/ms       3002   inc / ms
+102.22400220131851
+Delay = 1000 result = 5844
+Count                 5996091
+Time                     2001
+Total increments/ms       2996   inc / ms
+99.29308775425781
+Count                 5959820
+Time                     2001
+Total increments/ms       2978   inc / ms
+84.25465195280238
+Count                 6299008
+Time                     2001
+Total increments/ms       3147   inc / ms
+153.0570224164155
+Delay = 2000 result = 8883
+Count                 6553659
+Time                     2015
+Total increments/ms       3252   inc / ms
+133.4868293345458
+Count                 6315567
+Time                     2001
+Total increments/ms       3156   inc / ms
+108.96421070614547
+Count                 6121045
+Time                     2000
+Total increments/ms       3060   inc / ms
+100.0044538539104
+Delay = 3000 result = 12039
+Count                 6328997
+Time                     2001
+Total increments/ms       3162   inc / ms
+118.143460151127
+Count                 6003714
+Time                     2006
+Total increments/ms       2992   inc / ms
+103.74952413772134
+Count                 5877560
+Time                     2002
+Total increments/ms       2935   inc / ms
+90.47271964391031
+Delay = 4000 result = 15068
+Count                 6176844
+Time                     2000
+Total increments/ms       3088   inc / ms
+112.592530353771
+Count                 6190027
+Time                     2003
+Total increments/ms       3090   inc / ms
+118.50653742997385
+Count                 6238023
+Time                     2000
+Total increments/ms       3119   inc / ms
+107.28013239606727
+Delay = 5000 result = 18166
+Count                 6390351
+Time                     2003
+Total increments/ms       3190   inc / ms
+123.6272233432574
+Count                 6375979
+Time                     2001
+Total increments/ms       3186   inc / ms
+91.50344631893235
+Count                 6320483
+Time                     2001
+Total increments/ms       3158   inc / ms
+85.01101172716294
+Delay = 6000 result = 21343
+Count                 6166257
+Time                     2001
+Total increments/ms       3081   inc / ms
+105.51919983763321
+Count                 6287069
+Time                     2008
+Total increments/ms       3131   inc / ms
+145.8879461801862
+Count                 5622297
+Time                     2012
+Total increments/ms       2794   inc / ms
+77.36600130784126
+Delay = 7000 result = 24344
+Count                 6397983
+Time                     2003
+Total increments/ms       3194   inc / ms
+133.72118137923692
+Count                 6425675
+Time                     2001
+Total increments/ms       3211   inc / ms
+123.6786719698452
+Count                 6363843
+Time                     2008
+Total increments/ms       3169   inc / ms
+96.94584308266492
+Delay = 8000 result = 27534
+Count                 6302727
+Time                     2001
+Total increments/ms       3149   inc / ms
+108.30481610486463
+Count                 6324538
+Time                     2006
+Total increments/ms       3152   inc / ms
+103.0307192701942
+Count                 6219972
+Time                     2001
+Total increments/ms       3108   inc / ms
+96.70455600409028
+Delay = 9000 result = 30669
+Count                 6300635
+Time                     2002
+Total increments/ms       3147   inc / ms
+103.87513242087007
+Count                 6595286
+Time                     2002
+Total increments/ms       3294   inc / ms
+118.69415753654035
+Count                 6551161
+Time                     2000
+Total increments/ms       3275   inc / ms
+125.3042579154669
+Delay = 10000 result = 33907
+Count                 6649879
+Time                     2001
+Total increments/ms       3323   inc / ms
+106.33476211954446
+Count                 6723840
+Time                     2005
+Total increments/ms       3353   inc / ms
+160.67802314451282
+Count                 6676517
+Time                     2001
+Total increments/ms       3336   inc / ms
+116.68435754943027
+Delay = 11000 result = 37243
+Count                 6977319
+Time                     2001
+Total increments/ms       3486   inc / ms
+140.2468313779993
+Count                 6826541
+Time                     2000
+Total increments/ms       3413   inc / ms
+97.35620335652888
+Count                 6730463
+Time                     2000
+Total increments/ms       3365   inc / ms
+135.59620408821394
+Delay = 12000 result = 40663
+Count                 6324723
+Time                     2002
+Total increments/ms       3159   inc / ms
+95.00429870649921
+Count                 6371290
+Time                     2004
+Total increments/ms       3179   inc / ms
+97.04809694996489
+Count                 6395024
+Time                     2001
+Total increments/ms       3195   inc / ms
+108.41107610470995
+Delay = 13000 result = 43840
+Count                 6403765
+Time                     2001
+Total increments/ms       3200   inc / ms
+104.47913378360414
+Count                 6356986
+Time                     2001
+Total increments/ms       3176   inc / ms
+83.09844197190334
+Count                 6518538
+Time                     2001
+Total increments/ms       3257   inc / ms
+101.92134368502974
+Delay = 14000 result = 47049
+Count                 6526869
+Time                     2000
+Total increments/ms       3263   inc / ms
+90.41433179091146
+Count                 6719990
+Time                     2000
+Total increments/ms       3359   inc / ms
+122.72793732699203
+Count                 6441079
+Time                     2002
+Total increments/ms       3217   inc / ms
+93.61872610072112
+Delay = 15000 result = 50327
+Count                 6687026
+Time                     2004
+Total increments/ms       3336   inc / ms
+121.34149511354963
+Count                 6655312
+Time                     2002
+Total increments/ms       3324   inc / ms
+101.78053346043156
+Count                 6719279
+Time                     2001
+Total increments/ms       3357   inc / ms
+105.06590517154166
+Delay = 16000 result = 53666
+Count                 6985141
+Time                     2001
+Total increments/ms       3490   inc / ms
+132.58569521935783
+Count                 6930339
+Time                     2005
+Total increments/ms       3456   inc / ms
+100.85828198507267
+Count                 6762058
+Time                     2002
+Total increments/ms       3377   inc / ms
+101.6063267375518
+Delay = 17000 result = 57106
+Count                 7012395
+Time                     2011
+Total increments/ms       3487   inc / ms
+109.05958304604148
+Count                 7019760
+Time                     2000
+Total increments/ms       3509   inc / ms
+122.19647382232179
+Count                 6836047
+Time                     2008
+Total increments/ms       3404   inc / ms
+77.45261365400955
+Delay = 18000 result = 60571
+Count                 7169463
+Time                     2002
+Total increments/ms       3581   inc / ms
+121.80115765223225
+Count                 7273694
+Time                     2000
+Total increments/ms       3636   inc / ms
+102.403789503851
+Count                 7129913
+Time                     2000
+Total increments/ms       3564   inc / ms
+82.59498112057626
+Delay = 19000 result = 64164
+Count                 7189090
+Time                     2000
+Total increments/ms       3594   inc / ms
+164.8798640449567
+Count                 7214274
+Time                     2001
+Total increments/ms       3605   inc / ms
+111.18969131900637
+Count                 7437866
+Time                     2001
+Total increments/ms       3717   inc / ms
+99.4012281957803
+Delay = 20000 result = 67802
+Count                 7578796
+Time                     2001
+Total increments/ms       3787   inc / ms
+104.77546465089064
+Count                 7489468
+Time                     2006
+Total increments/ms       3733   inc / ms
+120.34033299841686
+Count                 7346707
+Time                     2003
+Total increments/ms       3667   inc / ms
+103.15680294226303
+Delay = 21000 result = 71530
+Count                 7345273
+Time                     2005
+Total increments/ms       3663   inc / ms
+94.2367777506444
+Count                 7700968
+Time                     2008
+Total increments/ms       3835   inc / ms
+97.73225816643301
+Count                 7721700
+Time                     2001
+Total increments/ms       3858   inc / ms
+109.82609533275948
+Delay = 22000 result = 75315
+Count                 7521522
+Time                     2000
+Total increments/ms       3760   inc / ms
+118.33781215899316
+Count                 7449579
+Time                     2000
+Total increments/ms       3724   inc / ms
+99.4189289089364
+Count                 7615767
+Time                     2005
+Total increments/ms       3798   inc / ms
+101.36315296868557
+Delay = 23000 result = 79075
+Count                 7574854
+Time                     2004
+Total increments/ms       3779   inc / ms
+162.80427065394204
+Count                 7204528
+Time                     2001
+Total increments/ms       3600   inc / ms
+79.26699029229357
+Count                 7354812
+Time                     2001
+Total increments/ms       3675   inc / ms
+127.74897445952801
+Delay = 24000 result = 82759
+Count                 7904355
+Time                     2001
+Total increments/ms       3950   inc / ms
+93.16666410614299
+Count                 7691637
+Time                     2001
+Total increments/ms       3843   inc / ms
+155.2441660861885
+Count                 8365420
+Time                     2000
+Total increments/ms       4182   inc / ms
+121.15584585738308
+Delay = 25000 result = 86750
+Count                 6959583
+Time                     2002
+Total increments/ms       3476   inc / ms
+112.73473436887494
+Count                 6890671
+Time                     2011
+Total increments/ms       3426   inc / ms
+114.97562197915825
+Count                 6826698
+Time                     2002
+Total increments/ms       3409   inc / ms
+133.09535973441004
+Delay = 26000 result = 90186
+Count                 6977311
+Time                     2002
+Total increments/ms       3485   inc / ms
+96.0599743200013
+Count                 7117304
+Time                     2002
+Total increments/ms       3555   inc / ms
+107.18488256681408
+Count                 7046195
+Time                     2001
+Total increments/ms       3521   inc / ms
+110.24806107489843
+Delay = 27000 result = 93705
+Count                 7161142
+Time                     2001
+Total increments/ms       3578   inc / ms
+123.03190194788229
+Count                 7122305
+Time                     2000
+Total increments/ms       3561   inc / ms
+113.5674186505314
+Count                 6822569
+Time                     2001
+Total increments/ms       3409   inc / ms
+105.15480857768446
+Delay = 28000 result = 97220
+Count                 7275576
+Time                     2001
+Total increments/ms       3635   inc / ms
+126.20656858669177
+Count                 7006534
+Time                     2001
+Total increments/ms       3501   inc / ms
+109.57089427655528
+Count                 7092579
+Time                     2000
+Total increments/ms       3546   inc / ms
+83.33848701561895
+Delay = 29000 result = 100780
+Count                 7432539
+Time                     2003
+Total increments/ms       3710   inc / ms
+119.06870662539279
+Count                 7592222
+Time                     2011
+Total increments/ms       3775   inc / ms
+116.00470065305869
+Count                 7332297
+Time                     2000
+Total increments/ms       3666   inc / ms
+105.7064600429707
+Delay = 30000 result = 104496
+Count                 7763885
+Time                     2007
+Total increments/ms       3868   inc / ms
+125.62813929558247
+Count                 7496204
+Time                     2026
+Total increments/ms       3700   inc / ms
+111.16659518814184
+Count                 7273778
+Time                     2001
+Total increments/ms       3635   inc / ms
+122.07474060419857
+Delay = 31000 result = 108229
+Count                 7663340
+Time                     2001
+Total increments/ms       3829   inc / ms
+129.8034746973822
+Count                 7557435
+Time                     2003
+Total increments/ms       3773   inc / ms
+151.6884827057828
+Count                 7353030
+Time                     2002
+Total increments/ms       3672   inc / ms
+87.9724543656628
+Delay = 32000 result = 111986
+Count                 7895066
+Time                     2001
+Total increments/ms       3945   inc / ms
+162.62422972359045
+Count                 7718454
+Time                     2006
+Total increments/ms       3847   inc / ms
+112.08361237146171
+Count                 7603208
+Time                     2005
+Total increments/ms       3792   inc / ms
+105.63393005091983
+Delay = 33000 result = 115847
+Count                 7690791
+Time                     2001
+Total increments/ms       3843   inc / ms
+152.57620421283943
+Count                 7833408
+Time                     2001
+Total increments/ms       3914   inc / ms
+113.45171827615798
+Count                 7851777
+Time                     2000
+Total increments/ms       3925   inc / ms
+144.82602690029964
+Delay = 34000 result = 119740
+Count                 7911917
+Time                     2001
+Total increments/ms       3953   inc / ms
+87.19166224347532
+Count                 7440090
+Time                     2013
+Total increments/ms       3696   inc / ms
+107.46385074799575
+Count                 7860287
+Time                     2001
+Total increments/ms       3928   inc / ms
+105.22552023503523
+Delay = 35000 result = 123598
+Count                 7964233
+Time                     2003
+Total increments/ms       3976   inc / ms
+106.28383091022101
+Count                 8098587
+Time                     2000
+Total increments/ms       4049   inc / ms
+96.12468822105724
+Count                 7690984
+Time                     2000
+Total increments/ms       3845   inc / ms
+118.6042335620603
+Delay = 36000 result = 127553
+Count                 7820380
+Time                     2004
+Total increments/ms       3902   inc / ms
+153.62812040318457
+Count                 8268080
+Time                     2004
+Total increments/ms       4125   inc / ms
+122.81859863089727
+Count                 7923873
+Time                     2017
+Total increments/ms       3928   inc / ms
+92.13981856427114
+Delay = 37000 result = 131537
+Count                 8424357
+Time                     2003
+Total increments/ms       4205   inc / ms
+106.25989142651838
+Count                 7810610
+Time                     2000
+Total increments/ms       3905   inc / ms
+90.6557343821891
+Count                 8260049
+Time                     2000
+Total increments/ms       4130   inc / ms
+97.76509440314578
+Delay = 38000 result = 135615
+Count                 7698039
+Time                     2005
+Total increments/ms       3839   inc / ms
+129.91170469001958
+Count                 8183323
+Time                     2001
+Total increments/ms       4089   inc / ms
+87.84298020206572
+Count                 8841284
+Time                     2003
+Total increments/ms       4414   inc / ms
+113.91815453989672
+Delay = 39000 result = 139728
+Count                 8399127
+Time                     2000
+Total increments/ms       4199   inc / ms
+103.08310085263388
+Count                 8311602
+Time                     2007
+Total increments/ms       4141   inc / ms
+92.33193240861348
+Count                 8268294
+Time                     2005
+Total increments/ms       4123   inc / ms
+79.76495288312826
+Delay = 40000 result = 143881
+Count                 9220738
+Time                     2000
+Total increments/ms       4610   inc / ms
+109.1136997682161
+Count                 7979207
+Time                     2000
+Total increments/ms       3989   inc / ms
+109.55907080505806
+Count                 9040105
+Time                     2000
+Total increments/ms       4520   inc / ms
+97.0315587781105
+Delay = 41000 result = 148252
+Count                 8742150
+Time                     2004
+Total increments/ms       4362   inc / ms
+87.4866865432537
+Count                 8122361
+Time                     2001
+Total increments/ms       4059   inc / ms
+110.62914759976853
+Count                 7931676
+Time                     2000
+Total increments/ms       3965   inc / ms
+158.65420584047274
+Delay = 42000 result = 152380
+Count                 8626705
+Time                     2001
+Total increments/ms       4311   inc / ms
+83.74576056601386
+Count                 8576296
+Time                     2003
+Total increments/ms       4281   inc / ms
+101.78945665029507
+Count                 8948809
+Time                     2001
+Total increments/ms       4472   inc / ms
+112.05754968657921
+Delay = 43000 result = 156734
+Count                 8897266
+Time                     2002
+Total increments/ms       4444   inc / ms
+109.2859439992792
+Count                 9057643
+Time                     2002
+Total increments/ms       4524   inc / ms
+99.58627847046921
