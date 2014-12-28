@@ -123,7 +123,6 @@ class CLHLock implements Lock {
 	}  
 
 	public void lock() {  
-		while( state.getAndSet(true) ) {;}  // change the lock state.
 		final QNode node = this.node.get();  
 		node.locked = true;  
 		QNode pred = this.tail.getAndSet(node);  
@@ -135,6 +134,7 @@ class CLHLock implements Lock {
 
 		if(!state.get())
 		{ 
+			while( state.getAndSet(true) ) {;}  // change the lock state.
 			this.lock(); 
 			return true;
 		}
@@ -179,7 +179,6 @@ class MCSLock implements Lock {
 	@Override
 	public void lock()
 	{
-		while( state.getAndSet(true) ) {;} // change the lock state.
 		QNode qNode = MyNode.get();        
 		QNode pred = tail.getAndSet(qNode);
 
@@ -214,6 +213,7 @@ class MCSLock implements Lock {
 
 	public boolean tryLock() {
 		if( !state.get() ) { // check first if it the lock is free
+			while( state.getAndSet(true) ) {;} // change the lock state.
 			this.lock(); // grab it
 			return true;
 		}

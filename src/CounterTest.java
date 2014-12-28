@@ -87,7 +87,6 @@ class ParallelCounter {
     for( int i = 0; i < numThreads; i++ ) {
       try {
         workerThread[i].join();
-        System.out.println("Worker number " + i + " counter = " + workerData[i].count);
         count[i] = workerData[i].count; // collect their independent counts
       } catch (InterruptedException ignore) {;}      
     }

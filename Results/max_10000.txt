@@ -1,0 +1,583 @@
+Running Backoff Lock optimization test
+======================================
+
+Count                 6129605
+Time                     2002
+Total packets/ms         3061   inc / ms
+189.11762831894606
+Count                 5868404
+Time                     2014
+Total packets/ms         2913   inc / ms
+153.6392937373324
+Count                 5984131
+Time                     2026
+Total packets/ms         2953   inc / ms
+75.28918036711588
+Count                 5260303
+Time                     2006
+Total packets/ms         2622   inc / ms
+60.26050904324323
+Delay = 0 Result = 2829
+Count                 5698977
+Time                     2018
+Total packets/ms         2824   inc / ms
+57.778689128710994
+Count                 6033158
+Time                     2013
+Total packets/ms         2997   inc / ms
+70.17449700189341
+Count                 6303317
+Time                     2014
+Total packets/ms         3129   inc / ms
+92.13012841767812
+Delay = 200 Result = 2983
+Count                 6572791
+Time                     2021
+Total packets/ms         3252   inc / ms
+111.0151307027139
+Count                 6421517
+Time                     2032
+Total packets/ms         3160   inc / ms
+94.28647719221385
+Count                 6635108
+Time                     2002
+Total packets/ms         3314   inc / ms
+166.39451908713633
+Delay = 400 Result = 3241
+Count                 5856604
+Time                     2004
+Total packets/ms         2922   inc / ms
+119.59196821712396
+Count                 6099771
+Time                     2017
+Total packets/ms         3024   inc / ms
+74.06529757585812
+Count                 6834109
+Time                     2001
+Total packets/ms         3415   inc / ms
+110.92297609882765
+Delay = 600 Result = 3120
+Count                 6134691
+Time                     2042
+Total packets/ms         3004   inc / ms
+83.62185741405297
+Count                 6227134
+Time                     2005
+Total packets/ms         3105   inc / ms
+87.86323688098967
+Count                 6628057
+Time                     2002
+Total packets/ms         3310   inc / ms
+103.17772276142284
+Delay = 800 Result = 3139
+Count                 6214143
+Time                     2003
+Total packets/ms         3102   inc / ms
+95.12920303151841
+Count                 6004243
+Time                     2022
+Total packets/ms         2969   inc / ms
+77.0660765399727
+Count                 6213419
+Time                     2015
+Total packets/ms         3083   inc / ms
+73.49822024748677
+Delay = 1000 Result = 3050
+Count                 6144058
+Time                     2007
+Total packets/ms         3061   inc / ms
+83.26873965941918
+Count                 6213664
+Time                     2013
+Total packets/ms         3086   inc / ms
+78.39458553647353
+Count                 6060022
+Time                     2003
+Total packets/ms         3025   inc / ms
+78.73849012797805
+Delay = 1200 Result = 3056
+Count                 5841600
+Time                     2007
+Total packets/ms         2910   inc / ms
+63.047191011060896
+Count                 6276917
+Time                     2027
+Total packets/ms         3096   inc / ms
+90.40158382501366
+Count                 5638276
+Time                     2021
+Total packets/ms         2789   inc / ms
+82.09547031400668
+Delay = 1400 Result = 2931
+Count                 5924450
+Time                     2003
+Total packets/ms         2957   inc / ms
+69.67218887603688
+Count                 6135231
+Time                     2001
+Total packets/ms         3066   inc / ms
+93.77144606651198
+Count                 5661907
+Time                     2021
+Total packets/ms         2801   inc / ms
+67.85956132126016
+Delay = 1600 Result = 2940
+Count                 5911459
+Time                     2005
+Total packets/ms         2948   inc / ms
+68.55822739730831
+Count                 5711062
+Time                     2005
+Total packets/ms         2848   inc / ms
+69.87520958719887
+Count                 6057667
+Time                     2012
+Total packets/ms         3010   inc / ms
+87.25612370310459
+Delay = 1800 Result = 2934
+Count                 6531466
+Time                     2010
+Total packets/ms         3249   inc / ms
+100.27970575032423
+Count                 5286330
+Time                     2007
+Total packets/ms         2633   inc / ms
+55.63708554398326
+Count                 5640407
+Time                     2001
+Total packets/ms         2818   inc / ms
+61.060076157661584
+Delay = 2000 Result = 2899
+Count                 6242573
+Time                     2039
+Total packets/ms         3061   inc / ms
+82.33655615208401
+Count                 5636523
+Time                     2006
+Total packets/ms         2809   inc / ms
+64.68934793194789
+Count                 5232380
+Time                     2008
+Total packets/ms         2605   inc / ms
+55.638238071827665
+Delay = 2200 Result = 2824
+Count                 5776495
+Time                     2026
+Total packets/ms         2851   inc / ms
+55.8208119201859
+Count                 6490387
+Time                     2024
+Total packets/ms         3206   inc / ms
+144.1949774075569
+Count                 5739649
+Time                     2084
+Total packets/ms         2754   inc / ms
+68.1774852354447
+Delay = 2400 Result = 2936
+Count                 5418324
+Time                     2007
+Total packets/ms         2699   inc / ms
+69.4720800488087
+Count                 6008674
+Time                     2026
+Total packets/ms         2965   inc / ms
+76.46150503765122
+Count                 6199410
+Time                     2012
+Total packets/ms         3081   inc / ms
+76.11109662911277
+Delay = 2600 Result = 2914
+Count                 6292336
+Time                     2035
+Total packets/ms         3092   inc / ms
+88.51819834862115
+Count                 5369408
+Time                     2024
+Total packets/ms         2652   inc / ms
+59.63505309486113
+Count                 6189563
+Time                     2006
+Total packets/ms         3085   inc / ms
+83.33543486361118
+Delay = 2800 Result = 2942
+Count                 5512791
+Time                     2003
+Total packets/ms         2752   inc / ms
+54.08538158364872
+Count                 6187219
+Time                     2020
+Total packets/ms         3062   inc / ms
+86.37858946249237
+Count                 5771319
+Time                     2026
+Total packets/ms         2848   inc / ms
+70.54129151747547
+Delay = 3000 Result = 2886
+Count                 6157013
+Time                     2044
+Total packets/ms         3012   inc / ms
+80.32296720093453
+Count                 4976062
+Time                     2018
+Total packets/ms         2465   inc / ms
+70.40250688111482
+Count                 5865764
+Time                     2049
+Total packets/ms         2862   inc / ms
+65.6777784521045
+Delay = 3200 Result = 2779
+Count                 6389607
+Time                     2007
+Total packets/ms         3183   inc / ms
+89.27830631196314
+Count                 6803997
+Time                     2011
+Total packets/ms         3383   inc / ms
+108.156098892563
+Count                 6146850
+Time                     2051
+Total packets/ms         2997   inc / ms
+82.15660031803985
+Delay = 3400 Result = 3187
+Count                 5750410
+Time                     2023
+Total packets/ms         2842   inc / ms
+66.59710556657475
+Count                 6092585
+Time                     2004
+Total packets/ms         3040   inc / ms
+68.48418529896057
+Count                 6566326
+Time                     2007
+Total packets/ms         3271   inc / ms
+96.69804403581308
+Delay = 3600 Result = 3050
+Count                 6142965
+Time                     2030
+Total packets/ms         3026   inc / ms
+78.3195358390131
+Count                 6106466
+Time                     2024
+Total packets/ms         3017   inc / ms
+91.16006523338207
+Count                 5796892
+Time                     2004
+Total packets/ms         2892   inc / ms
+69.84003225981117
+Delay = 3800 Result = 2977
+Count                 6293193
+Time                     2017
+Total packets/ms         3120   inc / ms
+93.15877703057382
+Count                 5789033
+Time                     2005
+Total packets/ms         2887   inc / ms
+69.01650555218835
+Count                 5895688
+Time                     2013
+Total packets/ms         2928   inc / ms
+65.58189071213847
+Delay = 4000 Result = 2978
+Count                 6173868
+Time                     2018
+Total packets/ms         3059   inc / ms
+88.5973846261766
+Count                 6072545
+Time                     2030
+Total packets/ms         2991   inc / ms
+60.903237804720575
+Count                 5810657
+Time                     2008
+Total packets/ms         2893   inc / ms
+64.22842218548995
+Delay = 4200 Result = 2980
+Count                 5171844
+Time                     2025
+Total packets/ms         2553   inc / ms
+50.22488238593034
+Count                 6551908
+Time                     2017
+Total packets/ms         3248   inc / ms
+108.04546656751509
+Count                 5840799
+Time                     2011
+Total packets/ms         2904   inc / ms
+62.028315803212195
+Delay = 4400 Result = 2901
+Count                 6327885
+Time                     2004
+Total packets/ms         3157   inc / ms
+145.9282185534627
+Count                 6281748
+Time                     2038
+Total packets/ms         3082   inc / ms
+89.85765948724443
+Count                 6078546
+Time                     2032
+Total packets/ms         2991   inc / ms
+84.17589215090582
+Delay = 4600 Result = 3076
+Count                 6282746
+Time                     2002
+Total packets/ms         3138   inc / ms
+89.16703647503493
+Count                 6425995
+Time                     2008
+Total packets/ms         3200   inc / ms
+160.0664447444944
+Count                 6293620
+Time                     2035
+Total packets/ms         3092   inc / ms
+89.68943651297893
+Delay = 4800 Result = 3142
+Count                 6357291
+Time                     2001
+Total packets/ms         3177   inc / ms
+92.69828479575524
+Count                 6754253
+Time                     2024
+Total packets/ms         3337   inc / ms
+191.55767329353938
+Count                 6327266
+Time                     2009
+Total packets/ms         3149   inc / ms
+104.46949171377004
+Delay = 5000 Result = 3220
+Count                 6674132
+Time                     2018
+Total packets/ms         3307   inc / ms
+100.2075638347396
+Count                 5906921
+Time                     2010
+Total packets/ms         2938   inc / ms
+66.82424727560388
+Count                 6586738
+Time                     2010
+Total packets/ms         3276   inc / ms
+128.37316785760916
+Delay = 5200 Result = 3173
+Count                 6141572
+Time                     2022
+Total packets/ms         3037   inc / ms
+90.90226024398603
+Count                 5850293
+Time                     2004
+Total packets/ms         2919   inc / ms
+78.82725416944365
+Count                 5795456
+Time                     2000
+Total packets/ms         2897   inc / ms
+80.2901988648054
+Delay = 5400 Result = 2950
+Count                 6070472
+Time                     2001
+Total packets/ms         3033   inc / ms
+89.96527194293402
+Count                 6111456
+Time                     2020
+Total packets/ms         3025   inc / ms
+72.08851217512503
+Count                 5981959
+Time                     2011
+Total packets/ms         2974   inc / ms
+74.62362899313672
+Delay = 5600 Result = 3010
+Count                 6087209
+Time                     2004
+Total packets/ms         3037   inc / ms
+97.89741543987454
+Count                 5799206
+Time                     2045
+Total packets/ms         2835   inc / ms
+61.97799300728061
+Count                 6261394
+Time                     2003
+Total packets/ms         3126   inc / ms
+97.02936581054402
+Delay = 5800 Result = 2999
+Count                 6330966
+Time                     2007
+Total packets/ms         3154   inc / ms
+92.69117091350766
+Count                 6190808
+Time                     2087
+Total packets/ms         2966   inc / ms
+73.75650048308869
+Count                 6242576
+Time                     2019
+Total packets/ms         3091   inc / ms
+94.70443525546416
+Delay = 6000 Result = 3069
+Count                 5937189
+Time                     2010
+Total packets/ms         2953   inc / ms
+73.68149202422882
+Count                 6228178
+Time                     2008
+Total packets/ms         3101   inc / ms
+81.79234636473225
+Count                 6154508
+Time                     2070
+Total packets/ms         2973   inc / ms
+68.0618769297065
+Delay = 6200 Result = 3008
+Count                 5909895
+Time                     2004
+Total packets/ms         2949   inc / ms
+71.75332527588537
+Count                 5672141
+Time                     2008
+Total packets/ms         2824   inc / ms
+65.66982413911386
+Count                 6071400
+Time                     2053
+Total packets/ms         2957   inc / ms
+91.1568143779355
+Delay = 6400 Result = 2909
+Count                 6219972
+Time                     2009
+Total packets/ms         3096   inc / ms
+85.60180237421784
+Count                 5939081
+Time                     2010
+Total packets/ms         2954   inc / ms
+74.65277225590307
+Count                 6202489
+Time                     2035
+Total packets/ms         3047   inc / ms
+78.06005118088102
+Delay = 6600 Result = 3031
+Count                 5893868
+Time                     2005
+Total packets/ms         2939   inc / ms
+80.48195531450075
+Count                 5284070
+Time                     2014
+Total packets/ms         2623   inc / ms
+62.67486584800777
+Count                 5938110
+Time                     2022
+Total packets/ms         2936   inc / ms
+67.515688710882
+Delay = 6800 Result = 2831
+Count                 6234941
+Time                     2060
+Total packets/ms         3026   inc / ms
+76.04917281097951
+Count                 5509344
+Time                     2002
+Total packets/ms         2751   inc / ms
+73.40984380657879
+Count                 5603305
+Time                     2007
+Total packets/ms         2791   inc / ms
+67.02011157189439
+Delay = 7000 Result = 2855
+Count                 5793525
+Time                     2031
+Total packets/ms         2852   inc / ms
+70.51779220289191
+Count                 6081415
+Time                     2037
+Total packets/ms         2985   inc / ms
+76.91546583667183
+Count                 6033324
+Time                     2008
+Total packets/ms         3004   inc / ms
+62.48105735138787
+Delay = 7200 Result = 2946
+Count                 6216120
+Time                     2001
+Total packets/ms         3106   inc / ms
+90.9164054726352
+Count                 5786833
+Time                     2026
+Total packets/ms         2856   inc / ms
+76.21542576114139
+Count                 5946413
+Time                     2008
+Total packets/ms         2961   inc / ms
+76.11936116442945
+Delay = 7400 Result = 2974
+Count                 5356606
+Time                     2070
+Total packets/ms         2587   inc / ms
+57.85241303032447
+Count                 5347112
+Time                     2032
+Total packets/ms         2631   inc / ms
+53.60595868612054
+Count                 5539595
+Time                     2007
+Total packets/ms         2760   inc / ms
+53.607050768139985
+Delay = 7600 Result = 2659
+Count                 5769276
+Time                     2004
+Total packets/ms         2878   inc / ms
+76.47572551028318
+Count                 5589730
+Time                     2012
+Total packets/ms         2778   inc / ms
+66.64042602097376
+Count                 6064125
+Time                     2080
+Total packets/ms         2915   inc / ms
+63.70771551986372
+Delay = 7800 Result = 2856
+Count                 5909262
+Time                     2039
+Total packets/ms         2898   inc / ms
+79.2788549218351
+Count                 6145847
+Time                     2013
+Total packets/ms         3053   inc / ms
+89.25302299506379
+Count                 5904861
+Time                     2013
+Total packets/ms         2933   inc / ms
+75.48682895525157
+Delay = 8000 Result = 2960
+Count                 5905355
+Time                     2001
+Total packets/ms         2951   inc / ms
+88.47198470913689
+Count                 5662480
+Time                     2010
+Total packets/ms         2817   inc / ms
+78.18787275313467
+Count                 6212467
+Time                     2106
+Total packets/ms         2949   inc / ms
+79.13335352754096
+Delay = 8200 Result = 2905
+Count                 6359517
+Time                     2029
+Total packets/ms         3134   inc / ms
+91.50612042342198
+Count                 6490588
+Time                     2062
+Total packets/ms         3147   inc / ms
+100.13248201603528
+Count                 6708324
+Time                     2004
+Total packets/ms         3347   inc / ms
+103.01975404720403
+Delay = 8400 Result = 3208
+Count                 6485252
+Time                     2009
+Total packets/ms         3228   inc / ms
+93.74048723129953
+Count                 6249911
+Time                     2005
+Total packets/ms         3117   inc / ms
+110.26622301757344
+Count                 5418920
+Time                     2003
+Total packets/ms         2705   inc / ms
+67.04310556663292
+Delay = 8600 Result = 3016
+Count                 5847469
+Time                     2022
+Total packets/ms         2891   inc / ms
+70.01180030538866
