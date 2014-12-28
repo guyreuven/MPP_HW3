@@ -1,0 +1,7 @@
+----------========== Showing results for Parallel Counter Result (Test #2) scenario ==========----------
+Parallel Counter Result (Test #2) CSV output: 
+1,38138,38703,12006,23487,
+8,631,17457,766,855,
+64,88,15416,801,1188,
+----------==========        End of Parallel Counter Result (Test #2) CSV output         ==========----------
+Multicore execution finished.

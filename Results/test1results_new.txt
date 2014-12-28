@@ -1,0 +1,7 @@
+----------========== Showing results for Parallel Counter Result (Test #1) scenario ==========----------
+Parallel Counter Result (Test #1) CSV output:
+37940,
+38618,
+11827,
+23087,
+----------==========        End of Parallel Counter Result (Test #1) CSV output         ==========----------
