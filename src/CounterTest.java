@@ -25,7 +25,7 @@ class SerialCounter {
     
     printHelper.prettyPrint("Count", totalCount);
     printHelper.prettyPrint("Time", timer.getElapsedTime());
-    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " inc / ms");
+    printHelper.prettyPrint("Total increments/ms", totalCount/timer.getElapsedTime(), " inc / ms");
   
   	return totalCount/timer.getElapsedTime();
     
@@ -194,7 +194,8 @@ class ParallelCounterBackOffLockBenckmark {
 		final long totalCount = counter.value.counter;
 		printHelper.prettyPrint("Count", totalCount);
 		printHelper.prettyPrint("Time", timer.getElapsedTime());
-		printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " inc / ms");
+		printHelper.prettyPrint("Total increments/ms", totalCount/timer.getElapsedTime(), " inc / ms");
+
 
 		lock.unlock(); // give the workers a chance to see done.value == true
 

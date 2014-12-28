@@ -200,6 +200,7 @@ public class MppRunner {
 				for (String numSources : numSourcesArgs) {
 					arguments = new String[]{M, numSources, "1000", "true", "4"};
 					serialUniformPacketResults[j] += SerialPacket.main(arguments)/uniform_runs;
+					j++;
 				}
 			}
 			
@@ -253,11 +254,11 @@ public class MppRunner {
 			break;
 
 		case PACKET_SpeedupWithExponentialLoad_Phase1:
-			System.out.println("Running PACKET_SpeedupWithUniformLoad test");
+			System.out.println("Running PACKET_SpeedupWithExponentialLoad test");
 			System.out.println("==========================================\n");
 
 			//			meanInputsArgs = new String[]{"1000", "6000"};
-			numSourcesArgs = new String[]{"1", "4", "10"};
+			numSourcesArgs = new String[]{"1", "8", "64"};
 			//	        lockInputsArgs = new String[]{"0", "1"};
 			strategyInputsArgs = new String[]{"0", "2", "3"};
 
@@ -287,16 +288,16 @@ public class MppRunner {
 				}
 			}
 			
-			printHelper.csvPrinter("Serial Uniform Packet Results (Test #6): Mean = 1000", serialUniformPacketResults);
-			printHelper.csvPrinter("Parallel Uniform Packet Results (Test #6): Mean = 1000, lock = 0", parallelUniformPacketResults_2d);
+			printHelper.csvPrinter("Serial Exponential Packet Results (Test #6): Mean = 1000", serialUniformPacketResults);
+			printHelper.csvPrinter("Parallel Exponential Packet Results (Test #6): Mean = 1000, lock = 0", parallelUniformPacketResults_2d);
 
 			break;
 		case PACKET_SpeedupWithExponentialLoad_Phase2:
-			System.out.println("Running PACKET_SpeedupWithUniformLoad test");
+			System.out.println("Running PACKET_SpeedupWithExponentialLoad test");
 			System.out.println("==========================================\n");
 
 			//			meanInputsArgs = new String[]{"1000", "6000"};
-			numSourcesArgs = new String[]{"1", "4", "10"};
+			numSourcesArgs = new String[]{"1", "8", "64"};
 			//	        lockInputsArgs = new String[]{"0", "1"};
 			strategyInputsArgs = new String[]{"0", "2", "3"};
 
@@ -326,16 +327,16 @@ public class MppRunner {
 				}
 			}
 			
-			printHelper.csvPrinter("Serial Uniform Packet Results (Test #6): Mean = 1000", serialUniformPacketResults);
-			printHelper.csvPrinter("Parallel Uniform Packet Results (Test #6): Mean = 1000, lock = 1", parallelUniformPacketResults_2d);
+			printHelper.csvPrinter("Serial Exponential Packet Results (Test #6): Mean = 1000", serialUniformPacketResults);
+			printHelper.csvPrinter("Parallel Exponential Packet Results (Test #6): Mean = 1000, lock = 1", parallelUniformPacketResults_2d);
 
 			break;
 		case PACKET_SpeedupWithExponentialLoad_Phase3:
-			System.out.println("Running PACKET_SpeedupWithUniformLoad test");
+			System.out.println("Running PACKET_SpeedupWithExponentialLoad test");
 			System.out.println("==========================================\n");
 
 			//			meanInputsArgs = new String[]{"1000", "6000"};
-			numSourcesArgs = new String[]{"1", "4", "10"};
+			numSourcesArgs = new String[]{"1", "8", "64"};
 			//			lockInputsArgs = new String[]{"0", "1"};
 			strategyInputsArgs = new String[]{"0", "2", "3"};
 
@@ -365,16 +366,16 @@ public class MppRunner {
 				}
 			}
 			
-			printHelper.csvPrinter("Serial Uniform Packet Results (Test #6): Mean = 6000", serialUniformPacketResults);
-			printHelper.csvPrinter("Parallel Uniform Packet Results (Test #6): Mean = 6000, lock = 0", parallelUniformPacketResults_2d);
+			printHelper.csvPrinter("Serial Exponential Packet Results (Test #6): Mean = 6000", serialUniformPacketResults);
+			printHelper.csvPrinter("Parallel Exponential Packet Results (Test #6): Mean = 6000, lock = 0", parallelUniformPacketResults_2d);
 
 			break;
 		case PACKET_SpeedupWithExponentialLoad_Phase4:
-			System.out.println("Running PACKET_SpeedupWithUniformLoad test");
+			System.out.println("Running PACKET_SpeedupWithExponentialLoad test");
 			System.out.println("==========================================\n");
 
 			//			meanInputsArgs = new String[]{"1000", "6000"};
-			numSourcesArgs = new String[]{"1", "4", "10"};
+			numSourcesArgs = new String[]{"1", "8", "64"};
 			//			lockInputsArgs = new String[]{"0", "1"};
 			strategyInputsArgs = new String[]{"0", "2", "3"};
 
@@ -404,8 +405,8 @@ public class MppRunner {
 				}
 			}
 			
-			printHelper.csvPrinter("Serial Uniform Packet Results (Test #6): Mean = 6000", serialUniformPacketResults);
-			printHelper.csvPrinter("Parallel Uniform Packet Results (Test #6): Mean = 6000 , lock = 1", parallelUniformPacketResults_2d);
+			printHelper.csvPrinter("Serial Exponential Packet Results (Test #6): Mean = 6000", serialUniformPacketResults);
+			printHelper.csvPrinter("Parallel Exponential Packet Results (Test #6): Mean = 6000 , lock = 1", parallelUniformPacketResults_2d);
 			break;
 		}
 	}
