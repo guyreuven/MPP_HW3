@@ -25,7 +25,7 @@ class SerialCounter {
     
     printHelper.prettyPrint("Count", totalCount);
     printHelper.prettyPrint("Time", timer.getElapsedTime());
-    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " pkts / ms");
+    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " inc / ms");
   
   	return totalCount/timer.getElapsedTime();
     
@@ -79,7 +79,7 @@ class ParallelCounter {
 //    System.out.println(totalCount/timer.getElapsedTime() + " inc / ms");
     printHelper.prettyPrint("Count", totalCount);
     printHelper.prettyPrint("Time", timer.getElapsedTime());
-    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " pkts / ms");
+    printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " inc / ms");
 
     lock.unlock(); // give the workers a chance to see done.value == true
     
@@ -87,21 +87,22 @@ class ParallelCounter {
     for( int i = 0; i < numThreads; i++ ) {
       try {
         workerThread[i].join();
+        System.out.println("Worker number " + i + " counter = " + workerData[i].count);
         count[i] = workerData[i].count; // collect their independent counts
       } catch (InterruptedException ignore) {;}      
     }
-    System.out.println(Statistics.getStdDev(count));
+    System.out.println(Statistics.getStdDev(count)/timer.getElapsedTime());
     
     switch (returnType) {
 	case 1:	// return throughput
 		return String.valueOf(totalCount/timer.getElapsedTime());
 	case 2:	// return Standard Deviation
-		return String.valueOf(Statistics.getStdDev(count));
+		return String.valueOf(Statistics.getStdDev(count)/timer.getElapsedTime());
 	case 3:	// return both throughput and Standard Deviation
 //		String[] retArr = new String[2];
 //		retArr[0] = String.valueOf(Statistics.getStdDev(count));
 //		retArr[1] = String.valueOf(totalCount/timer.getElapsedTime());
-		return String.valueOf(Statistics.getStdDev(count)) + ", " + String.valueOf(totalCount/timer.getElapsedTime());
+		return String.valueOf(Statistics.getStdDev(count)/timer.getElapsedTime()) + ", " + String.valueOf(totalCount/timer.getElapsedTime());
 
 	default:
 		return String.valueOf(totalCount/timer.getElapsedTime());
@@ -193,7 +194,7 @@ class ParallelCounterBackOffLockBenckmark {
 		final long totalCount = counter.value.counter;
 		printHelper.prettyPrint("Count", totalCount);
 		printHelper.prettyPrint("Time", timer.getElapsedTime());
-		printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " pkts / ms");
+		printHelper.prettyPrint("Total packets/ms", totalCount/timer.getElapsedTime(), " inc / ms");
 
 		lock.unlock(); // give the workers a chance to see done.value == true
 
@@ -204,7 +205,7 @@ class ParallelCounterBackOffLockBenckmark {
 				count[i] = workerData[i].count; // collect their independent counts
 			} catch (InterruptedException ignore) {;}      
 		}
-//		System.out.println(Statistics.getStdDev(count));
+		System.out.println(Statistics.getStdDev(count)/timer.getElapsedTime());
 
 		return totalCount/timer.getElapsedTime();
 	} 
