@@ -161,7 +161,7 @@ class MCSLock implements Lock {
 	
 	private static final class QNode {  
 		volatile boolean locked;
-		QNode next = null;
+		volatile QNode next = null;
 	} 
 	
 	public MCSLock()
