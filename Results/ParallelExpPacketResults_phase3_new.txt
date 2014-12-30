@@ -1,0 +1,25 @@
+----------========== Showing results for Serial Exponential Packet Results (Test #6): Mean = 1000 scenario ==========----------
+Serial Exponential Packet Results (Test #6): Mean = 1000 CSV output: 
+451,
+451,
+451,
+----------==========        End of Serial Exponential Packet Results (Test #6): Mean = 1000 CSV output         ==========----------
+----------========== Showing results for Parallel Exponential Packet Results (Test #6): Mean = 1000, lock = 0 scenario ==========----------
+Parallel Exponential Packet Results (Test #6): Mean = 1000, lock = 0 CSV output: 
+
+398,
+1523,
+382,
+
+
+351,
+716,
+447,
+
+
+349,
+712,
+119,
+
+----------==========        End of Parallel Exponential Packet Results (Test #6): Mean = 1000, lock = 0 CSV output         ==========----------
+Multicore execution finished.
